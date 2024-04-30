@@ -12,5 +12,11 @@ namespace foca_project.DAO
         MySqlCommand SelectByProperties(string table, string[] propeties);
 
         MySqlCommand SelectAll(string table);
+
+        MySqlCommand Create(string table, string[] propeties, string[] values);
+
+        MySqlCommand Update(string table, string[] propeties, string[] values, string[] where);
+
+        MySqlCommand Delete(string table, string[] where);
     }
 }

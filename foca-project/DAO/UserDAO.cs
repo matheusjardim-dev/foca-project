@@ -33,5 +33,35 @@ namespace foca_project.DAO
                 return users;
             }
         }
+        //TODO: Implement this method
+        public void CreateUser(User user)
+        {
+            string[] properties = { "name", "email", "password" };
+            string[] values = { user.Name, user.Email, user.Password };
+
+            MySqlCommand cmd = _CRUDDAO.Create("users", properties, values);
+
+            cmd.ExecuteNonQuery();
+        }
+
+        public void UpdateUser(User user)
+        {
+            string[] properties = { "name", "email", "password" };
+            string[] values = { user.Name, user.Email, user.Password };
+            string[] where = { "idusers = " + user.Id };
+
+            MySqlCommand cmd = _CRUDDAO.Update("users", properties, values, where);
+
+            cmd.ExecuteNonQuery();
+        }
+
+        public void DeleteUser(User user)
+        {
+            string[] where = { "idusers = " + user.Id };
+
+            MySqlCommand cmd = _CRUDDAO.Delete("users", where);
+
+            cmd.ExecuteNonQuery();
+        }
     }
 }
