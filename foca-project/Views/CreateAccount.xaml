@@ -11,13 +11,20 @@
         <Border x:Name="Base" HorizontalAlignment="Center" VerticalAlignment="Center" Width="983" Height="553" Background="#EEEEEE" BorderBrush="#EEEEEE" CornerRadius="30"></Border>
         <Image x:Name="Logo" Source="/Resources/Logo v3.png" Width="322" Height="322" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0,0,237,0"></Image>
         <Label Content="Cadastre-se" HorizontalAlignment="Left" VerticalAlignment="Top" Height="75" Margin="236,146,0,0" FontSize="64" FontFamily="Roboto Serif" VerticalContentAlignment="Center"></Label>
-        <TextBox x:Name="CampoNome" HorizontalAlignment="Left" VerticalAlignment="Top" Height="46" Width="315" Margin="273,257,0,0" Background="#EEEEEE" BorderBrush="#9B9A9A" BorderThickness="0 0 0 3" Text="Nome" TextAlignment="Left" VerticalContentAlignment="Center" FontSize="24" Foreground="#9B9A9A"></TextBox>
+        <TextBox x:Name="CampoNome" HorizontalAlignment="Left" VerticalAlignment="Top" Height="46" Width="315" Margin="273,257,0,0" Background="#EEEEEE" BorderBrush="#9B9A9A" BorderThickness="0 0 0 3" Text="Nome" TextAlignment="Left" VerticalContentAlignment="Center" FontSize="24" Foreground="#9B9A9A" GotFocus="GotFocus" LostFocus="LostFocus"></TextBox>
         <TextBox x:Name="CampoEmail" HorizontalAlignment="Left" VerticalAlignment="Top" Height="46" Width="315" Margin="273,328,0,0" Background="#EEEEEE" BorderBrush="#9B9A9A" BorderThickness="0 0 0 3" Text="E-mail" TextAlignment="Left" VerticalContentAlignment="Center" FontSize="24" Foreground="#9B9A9A"></TextBox>
         <TextBox x:Name="CampoSenha" HorizontalAlignment="Left" VerticalAlignment="Top" Height="46" Width="315" Margin="273,399,0,0" Background="#EEEEEE" BorderBrush="#9B9A9A" BorderThickness="0 0 0 3" Text="Senha" TextAlignment="Left" VerticalContentAlignment="Center" FontSize="24" Foreground="#9B9A9A"></TextBox>
         <Image x:Name="Icone_pessoa" Source="/Resources/Icone pessoa.png" Width="24" Height="24" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="242,270,0,0"></Image>
         <Image x:Name="Icone_carta" Source="/Resources/Icone email.png" Height="23" Width="23" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="242,345,0,0"></Image>
-		<Image x:Name="Icone_cadeado" Source="/Resources/Icone cadeado.png" Height="24" Width="24" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="245,412,0,0"></Image>
-
+        <Image x:Name="Icone_cadeado" Source="/Resources/Icone cadeado.png" Height="24" Width="24" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="245,412,0,0"></Image>
+        <Button x:Name="BotãoConfirmar" Height="51" Width="216" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="309,0,0,160" Background="#EEEEEE" BorderThickness="3" BorderBrush="#9B9A9A" Content="Confirmar" FontSize="30" >
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="10"></Setter>
+                </Style>
+            </Button.Resources>
+        </Button>
+        <Label x:Name="TextoLogin" Height="27" Width="95" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="369,0,0,137" Content="ou Faça Login" VerticalContentAlignment="Center"/>
 
     </Grid>
 </Window>

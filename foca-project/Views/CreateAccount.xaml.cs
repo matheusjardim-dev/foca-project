@@ -28,5 +28,21 @@ namespace foca_project.Views
         {
 
         }
+
+        private void GotFocus(object sender, RoutedEventArgs e)
+        {
+            if (CampoNome.Text == "Nome")
+            {
+                CampoNome.Text = "";
+            }
+        }
+
+        private void LostFocus(object sender, RoutedEventArgs e)
+        {
+            if (CampoNome.Text ==  null)
+            {
+                CampoNome.Text = "Nome";
+            }
+        }
     }
 }
