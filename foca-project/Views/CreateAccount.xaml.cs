@@ -11,6 +11,8 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using foca_project.Models;
+using foca_project.ViewModels;
 
 namespace foca_project.Views
 {
@@ -19,9 +21,16 @@ namespace foca_project.Views
     /// </summary>
     public partial class CreateAccount : Window
     {
+        private readonly UserVM _UserVM = new UserVM();
         public CreateAccount()
         {
             InitializeComponent();
+            botaoConfirmar.Click += ClickButton;
+        }
+
+        private void ClickButton(object sender, RoutedEventArgs e)
+        {
+            createUser();
         }
 
         private void CampoNome_TextChanged(object sender, TextChangedEventArgs e)
@@ -31,18 +40,40 @@ namespace foca_project.Views
 
         private void GotFocus(object sender, RoutedEventArgs e)
         {
-            if (CampoNome.Text == "Nome")
+            if (campoNome.Text == "Nome")
             {
-                CampoNome.Text = "";
+                campoNome.Text = "";
             }
         }
 
         private void LostFocus(object sender, RoutedEventArgs e)
         {
-            if (CampoNome.Text ==  null)
+            if (campoNome.Text ==  null)
             {
-                CampoNome.Text = "Nome";
+                campoNome.Text = "Nome";
             }
+        }
+
+        private bool createUser()
+        {
+            if(
+                string.IsNullOrWhiteSpace(campoNome.Text) ||
+                string.IsNullOrWhiteSpace(campoEmail.Text) || 
+                string.IsNullOrWhiteSpace(campoSenha.Text)
+                )
+            {
+                MessageBox.Show("Preencha todos os campos");
+                return false;
+            }
+
+            User _user = new()
+            {
+                Name = campoNome.Text,
+                Email = campoEmail.Text,
+                Password = campoSenha.Text
+            };
+            _UserVM.CreateUser(_user);
+            return true;
         }
     }
 }

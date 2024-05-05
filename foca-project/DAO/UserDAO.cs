@@ -33,11 +33,11 @@ namespace foca_project.DAO
                 return users;
             }
         }
-        //TODO: Implement this method
+
         public void CreateUser(User user)
         {
-            string[] properties = { "name", "email", "password" };
-            string[] values = { user.Name, user.Email, user.Password };
+            string[] properties = ["name", "email", "password"];
+            string[] values = [user.Name, user.Email, user.Password];
 
             MySqlCommand cmd = _CRUDDAO.Create("users", properties, values);
 

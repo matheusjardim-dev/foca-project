@@ -39,9 +39,17 @@ namespace foca_project.DAO
 
         public MySqlCommand Create(string table, string[] properties, string[] values)
         {
-            string query = "INSERT INTO " + table + " (" + properties + ") VALUES (" + values + ")";
+            string columns = string.Join(", ", properties);
+            string valuePlaceholders = string.Join(", ", Enumerable.Repeat("?", values.Length));
+
+            string query = $"INSERT INTO {table} ({columns}) VALUES ({valuePlaceholders})";
 
             MySqlCommand cmd = new MySqlCommand(query, _conn);
+
+            for (int i = 0; i < values.Length; i++)
+            {
+                cmd.Parameters.AddWithValue($"@param{i}", values[i]);
+            }
 
             return cmd;
         }
