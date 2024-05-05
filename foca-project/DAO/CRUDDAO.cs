@@ -63,5 +63,17 @@ namespace foca_project.DAO
 
             return cmd; 
         }
+
+        public MySqlCommand GetActivitiesByUser(int iduser)
+        {
+            string query = "SELECT tasks.*, category.title as category " +
+                "FROM tasks " +
+                "INNER JOIN category ON tasks.category_idcategory = idcategory " +
+                "WHERE users_idusers = " + iduser;
+
+            MySqlCommand cmd = new MySqlCommand(query, _conn);
+
+            return cmd;
+        }
     }
 }
