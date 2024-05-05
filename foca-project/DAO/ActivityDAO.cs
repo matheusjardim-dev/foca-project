@@ -22,7 +22,7 @@ namespace foca_project.DAO
                 {
                     activities.Add(new Activity
                     {
-                        Id = Convert.ToInt32(reader["idactivities"]),
+                        Id = Convert.ToInt32(reader["idtasks"]),
                         Title = reader["title"].ToString(),
                         Description = reader["description"].ToString(),
                         Date_init = Convert.ToDateTime(reader["date_init"]),

@@ -77,7 +77,7 @@ namespace foca_project.DAO
             string query = "SELECT tasks.*, category.title as category " +
                 "FROM tasks " +
                 "INNER JOIN category ON tasks.category_idcategory = idcategory " +
-                "WHERE users_idusers = " + iduser;
+                "WHERE users_idusers = " + iduser + " ORDER BY category_idcategory ASC";
 
             MySqlCommand cmd = new MySqlCommand(query, _conn);
 
