@@ -31,5 +31,15 @@ namespace foca_project.ViewModels
         {
             _UserDAO.DeleteUser(user);
         }
+
+        public User? Login(string email, string password)
+        {
+            User user = _UserDAO.Login(email, password);
+            if (user != null)
+            {
+                return user;
+            }
+            return null;
+        }
     }
 }

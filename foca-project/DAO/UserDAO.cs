@@ -63,5 +63,25 @@ namespace foca_project.DAO
 
             cmd.ExecuteNonQuery();
         }
+
+        public User? Login(string email, string password)
+        {
+            MySqlCommand cmd = _CRUDDAO.Login(email, password);
+
+            using (MySqlDataReader reader = cmd.ExecuteReader())
+            {
+                if (reader.Read())
+                {
+                    return new User
+                    {
+                        Id = Convert.ToInt32(reader["idusers"]),
+                        Name = reader["name"].ToString(),
+                        Email = reader["email"].ToString(),
+                        Password = reader["password"].ToString()
+                    };
+                }
+                return null;
+            }
+        }
     }
 }

@@ -20,5 +20,7 @@ namespace foca_project.DAO
         MySqlCommand Delete(string table, string[] where);
 
         MySqlCommand GetActivitiesByUser(int iduser);
+
+        MySqlCommand Login(string email, string password);
     }
 }

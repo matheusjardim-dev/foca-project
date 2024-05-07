@@ -83,5 +83,14 @@ namespace foca_project.DAO
 
             return cmd;
         }
+
+        public MySqlCommand Login(string email, string password)
+        {
+            string query = "SELECT * FROM users WHERE email = '" + email + "' AND password = '" + password + "'";
+
+            MySqlCommand cmd = new MySqlCommand(query, _conn);
+
+            return cmd;
+        }
     }
 }
