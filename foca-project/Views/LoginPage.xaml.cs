@@ -16,38 +16,20 @@ using System.Windows.Shapes;
 namespace foca_project.Views
 {
     /// <summary>
-    /// Interação lógica para CreateAccount.xam
+    /// Interação lógica para LoginPage.xam
     /// </summary>
-    public partial class CreateAccount : Page
+    public partial class LoginPage : Page
     {
-        public CreateAccount()
+        public LoginPage()
         {
             InitializeComponent();
         }
 
-        private void Faca_login_Click(object sender, RoutedEventArgs e)
+        private void Botao_Cadastro_Click(object sender, RoutedEventArgs e)
         {
             if (NavigationService != null)
             {
-                NavigationService.Navigate(new Uri("/Views/LoginPage.xaml", UriKind.Relative));
-            }
-        }
-
-        private void CampoNome_GotFocus(object sender, RoutedEventArgs e)
-        {
-            string textoNome = CampoNome.Text;
-            if (textoNome == "Nome")
-            {
-                CampoNome.Text = null;
-            }
-        }
-
-        private void CampoNome_LostFocus(object sender, RoutedEventArgs e)
-        {
-            string textoNome = CampoNome.Text;
-            if (string.IsNullOrWhiteSpace(textoNome))
-            {
-                CampoNome.Text = "Nome";
+                NavigationService.Navigate(new Uri("/Views/CreateAccount.xaml", UriKind.Relative));
             }
         }
 
