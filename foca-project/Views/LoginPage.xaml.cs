@@ -12,46 +12,24 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using foca_project.Models;
-using foca_project.ViewModels;
 
 namespace foca_project.Views
 {
     /// <summary>
-    /// Interação lógica para CreateAccount.xam
+    /// Interação lógica para LoginPage.xam
     /// </summary>
-    public partial class CreateAccount : Page
+    public partial class LoginPage : Page
     {
-        private readonly UserVM _UserVM = new UserVM();
-        public CreateAccount()
+        public LoginPage()
         {
             InitializeComponent();
-            botaoConfirmar.Click += ClickButton;
         }
 
-        private void Faca_login_Click(object sender, RoutedEventArgs e)
+        private void Botao_Cadastro_Click(object sender, RoutedEventArgs e)
         {
             if (NavigationService != null)
             {
-                NavigationService.Navigate(new Uri("/Views/LoginPage.xaml", UriKind.Relative));
-            }
-        }
-
-        private void CampoNome_GotFocus(object sender, RoutedEventArgs e)
-        {
-            string textoNome = CampoNome.Text;
-            if (textoNome == "Nome")
-            {
-                CampoNome.Text = null;
-            }
-        }
-
-        private void CampoNome_LostFocus(object sender, RoutedEventArgs e)
-        {
-            string textoNome = CampoNome.Text;
-            if (string.IsNullOrWhiteSpace(textoNome))
-            {
-                CampoNome.Text = "Nome";
+                NavigationService.Navigate(new Uri("/Views/CreateAccount.xaml", UriKind.Relative));
             }
         }
 
@@ -89,15 +67,6 @@ namespace foca_project.Views
             {
                 CampoSenha.Text = "Senha";
             }
-
-            User _user = new()
-            {
-                Name = campoNome.Text,
-                Email = campoEmail.Text,
-                Password = campoSenha.Text
-            };
-            _UserVM.CreateUser(_user);
-            return true;
         }
     }
 }
