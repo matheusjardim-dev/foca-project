@@ -29,6 +29,11 @@ namespace foca_project.Views
             botaoConfirmar.Click += ClickButton;
         }
 
+        private void ClickButton(object sender, RoutedEventArgs e)
+        {
+            createUser();
+        }
+
         private void Faca_login_Click(object sender, RoutedEventArgs e)
         {
             if (NavigationService != null)
@@ -89,12 +94,25 @@ namespace foca_project.Views
             {
                 CampoSenha.Text = "Senha";
             }
+        }
+
+        private bool createUser()
+        {
+            if (
+                string.IsNullOrWhiteSpace(CampoNome.Text) ||
+                string.IsNullOrWhiteSpace(CampoEmail.Text) ||
+                string.IsNullOrWhiteSpace(CampoSenha.Text)
+                )
+            {
+                MessageBox.Show("Preencha todos os campos");
+                return false;
+            }
 
             User _user = new()
             {
-                Name = campoNome.Text,
-                Email = campoEmail.Text,
-                Password = campoSenha.Text
+                Name = CampoNome.Text,
+                Email = CampoEmail.Text,
+                Password = CampoSenha.Text
             };
             _UserVM.CreateUser(_user);
             return true;
