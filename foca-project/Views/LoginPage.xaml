@@ -5,15 +5,15 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:foca_project.Views"
       mc:Ignorable="d" 
-      d:DesignHeight="720" d:DesignWidth="1280"
+      d:DesignHeight="720" d:DesignWidth="1280" MinHeight="720" MinWidth="1280"
       Title="LoginPage" Background="#12372A">
 
     <Grid>
-        <Border x:Name="Base" HorizontalAlignment="Center" VerticalAlignment="Center" Width="983" Height="553" Background="#EEEEEE" BorderBrush="#EEEEEE" CornerRadius="30"></Border>
-        <Image x:Name="Logo" Source="/Resources/Logo v3.png" Width="322" Height="322" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0,0,734,0"></Image>
-        <Label Content="Fazer Login" HorizontalAlignment="Left" VerticalAlignment="Top" Height="90" Margin="678,146,0,0" FontSize="64" FontFamily="Roboto Serif" VerticalContentAlignment="Center"></Label>
-        <TextBox x:Name="CampoEmail" HorizontalAlignment="Left" VerticalAlignment="Top" Height="46" Width="315" Margin="715,278,0,0" Background="#EEEEEE" BorderBrush="#9B9A9A" BorderThickness="0 0 0 3" Text="E-mail" TextAlignment="Left" VerticalContentAlignment="Center" FontSize="24" Foreground="#9B9A9A" GotFocus="CampoEmail_GotFocus" LostFocus="CampoEmail_LostFocus"></TextBox>
-        <TextBox x:Name="CampoSenha" HorizontalAlignment="Left" VerticalAlignment="Top" Height="46" Width="315" Margin="715,380,0,0" Background="#EEEEEE" BorderBrush="#9B9A9A" BorderThickness="0 0 0 3" Text="Senha" TextAlignment="Left" VerticalContentAlignment="Center" FontSize="24" Foreground="#9B9A9A" GotFocus="CampoSenha_GotFocus" LostFocus="CampoSenha_LostFocus"></TextBox>
+        <Border x:Name="Base" Width="983" MinWidth="983" Height="553" MinHeight="553" Background="#EEEEEE" BorderBrush="#EEEEEE" CornerRadius="30" Margin="148,84,148,84"/>
+        <Image x:Name="Logo" Source="/Resources/Logo v3.png" Width="322" MinWidth="322" Height="322" MinHeight="322" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="224,199,734,199"></Image>
+        <Label Content="Fazer Login" Width="330" MinWidth="330" Height="90" MinHeight="90" Margin="708,162,242,468" FontSize="64" FontFamily="Roboto Serif" VerticalContentAlignment="Center"/>
+        <TextBox x:Name="CampoEmail" Height="46" MinHeight="46" Width="315" MinWidth="315" Margin="715,272,250,402" Background="#EEEEEE" BorderBrush="#9B9A9A" BorderThickness="0 0 0 3" Text="E-mail" TextAlignment="Left" VerticalContentAlignment="Center" FontSize="24" Foreground="#9B9A9A" GotFocus="CampoEmail_GotFocus" LostFocus="CampoEmail_LostFocus"/>
+        <TextBox x:Name="CampoSenha" Height="46" MinHeight="46" Width="315" MinWidth="315" Margin="716,392,250,282" Background="#EEEEEE" BorderBrush="#9B9A9A" BorderThickness="0 0 0 3" Text="Senha" TextAlignment="Left" VerticalContentAlignment="Center" FontSize="24" Foreground="#9B9A9A" GotFocus="CampoSenha_GotFocus" LostFocus="CampoSenha_LostFocus"/>
         <Image x:Name="Icone_carta" Source="../../Resources/Icone email.png" Height="23" Width="23" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="685,295,0,0"></Image>
         <Image x:Name="Icone_cadeado" Source="../../Resources/Icone cadeado.png" Height="24" Width="24" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="688,392,0,0"></Image>
         <Button x:Name="botaoConfirmar" Height="51" Width="216" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="746,0,0,160" Background="#EEEEEE" BorderThickness="3" BorderBrush="#9B9A9A" Content="Confirmar" FontSize="30" VerticalContentAlignment="Center">
