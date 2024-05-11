@@ -33,11 +33,11 @@ namespace foca_project.DAO
                 return users;
             }
         }
-        //TODO: Implement this method
+
         public void CreateUser(User user)
         {
-            string[] properties = { "name", "email", "password" };
-            string[] values = { user.Name, user.Email, user.Password };
+            string[] properties = ["name", "email", "password"];
+            string[] values = [user.Name, user.Email, user.Password];
 
             MySqlCommand cmd = _CRUDDAO.Create("users", properties, values);
 
@@ -62,6 +62,26 @@ namespace foca_project.DAO
             MySqlCommand cmd = _CRUDDAO.Delete("users", where);
 
             cmd.ExecuteNonQuery();
+        }
+
+        public User? Login(string email, string password)
+        {
+            MySqlCommand cmd = _CRUDDAO.Login(email, password);
+
+            using (MySqlDataReader reader = cmd.ExecuteReader())
+            {
+                if (reader.Read())
+                {
+                    return new User
+                    {
+                        Id = Convert.ToInt32(reader["idusers"]),
+                        Name = reader["name"].ToString(),
+                        Email = reader["email"].ToString(),
+                        Password = reader["password"].ToString()
+                    };
+                }
+                return null;
+            }
         }
     }
 }
