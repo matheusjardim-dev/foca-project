@@ -25,12 +25,16 @@ namespace foca_project.Views
         public LoginPage()
         {
             InitializeComponent();
-            botaoConfirmar.Click += ClickButton;
+            
         }
 
-        private void ClickButton(object sender, RoutedEventArgs e)
+        private void botaoConfirmar_Click(object sender, RoutedEventArgs e)
         {
             loginUser();
+            if (loginUser())
+            {
+                NavigationService.Navigate(new Uri("/Views/MainPage.xaml", UriKind.Relative));
+            }
         }
 
         private bool loginUser()
@@ -102,5 +106,7 @@ namespace foca_project.Views
                 campo_Senha.Text = "Senha";
             }
         }
+
+        
     }
 }

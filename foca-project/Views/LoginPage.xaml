@@ -16,7 +16,7 @@
         <TextBox x:Name="campo_Senha" Height="46" MinHeight="46" Width="315" MinWidth="315" Margin="716,392,250,282" Background="#EEEEEE" BorderBrush="#9B9A9A" BorderThickness="0 0 0 3" Text="Senha" TextAlignment="Left" VerticalContentAlignment="Center" FontSize="24" Foreground="#9B9A9A" GotFocus="CampoSenha_GotFocus" LostFocus="CampoSenha_LostFocus"/>
         <Image x:Name="icone_carta" Source="/Resources/Icone email.png" Height="23" Width="23" Margin="685,284,572,414"/>
         <Image x:Name="icone_cadeado" Source="/Resources/Icone cadeado.png" Height="24" Width="24" Margin="684,403,572,293"/>
-        <Button x:Name="botaoConfirmar" Height="51" Width="216" Margin="764,512,300,157" Background="#EEEEEE" BorderThickness="3" BorderBrush="#9B9A9A" Content="Confirmar" FontSize="30" VerticalContentAlignment="Center">
+        <Button x:Name="botaoConfirmar" Height="51" Width="216" Margin="764,512,300,157" Background="#EEEEEE" BorderThickness="3" BorderBrush="#9B9A9A" Content="Confirmar" FontSize="30" VerticalContentAlignment="Center" Click="botaoConfirmar_Click">
             <Button.Resources>
                 <Style TargetType="Border">
                     <Setter Property="CornerRadius" Value="10"></Setter>
