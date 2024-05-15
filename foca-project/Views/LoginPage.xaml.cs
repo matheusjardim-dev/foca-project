@@ -1,4 +1,5 @@
-﻿using System;
+﻿using foca_project.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,9 +21,42 @@ namespace foca_project.Views
     /// </summary>
     public partial class LoginPage : Page
     {
+        private readonly UserVM _UserVM = new UserVM();
         public LoginPage()
         {
             InitializeComponent();
+            botaoConfirmar.Click += ClickButton;
+        }
+
+        private void ClickButton(object sender, RoutedEventArgs e)
+        {
+            loginUser();
+        }
+
+        private bool loginUser()
+        {
+            string email = CampoEmail.Text;
+            string senha = CampoSenha.Text;
+
+            if (string.IsNullOrWhiteSpace(email) || email == "E-mail")
+            {
+                MessageBox.Show("Por favor, insira um e-mail válido.");
+                return false;
+            }
+
+            if (string.IsNullOrWhiteSpace(senha) || senha == "Senha")
+            {
+                MessageBox.Show("Por favor, insira uma senha válida.");
+                return false;
+            }
+
+            if (_UserVM.Login(email, senha) == null)
+            {
+                MessageBox.Show("E-mail ou senha inválidos.");
+                return false;
+            }
+            MessageBox.Show("Usuário logado com sucesso.");
+            return true;
         }
 
         private void Botao_Cadastro_Click(object sender, RoutedEventArgs e)

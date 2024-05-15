@@ -12,6 +12,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using foca_project.Models;
+using foca_project.ViewModels;
 
 namespace foca_project.Views
 {
@@ -20,9 +22,16 @@ namespace foca_project.Views
     /// </summary>
     public partial class CreateAccount : Page
     {
+        private readonly UserVM _UserVM = new UserVM();
         public CreateAccount()
         {
             InitializeComponent();
+            botaoConfirmar.Click += ClickButton;
+        }
+
+        private void ClickButton(object sender, RoutedEventArgs e)
+        {
+            createUser();
         }
 
         private void Faca_login_Click(object sender, RoutedEventArgs e)
@@ -85,6 +94,28 @@ namespace foca_project.Views
             {
                 CampoSenha.Text = "Senha";
             }
+        }
+
+        private bool createUser()
+        {
+            if (
+                string.IsNullOrWhiteSpace(CampoNome.Text) ||
+                string.IsNullOrWhiteSpace(CampoEmail.Text) ||
+                string.IsNullOrWhiteSpace(CampoSenha.Text)
+                )
+            {
+                MessageBox.Show("Preencha todos os campos");
+                return false;
+            }
+
+            User _user = new()
+            {
+                Name = CampoNome.Text,
+                Email = CampoEmail.Text,
+                Password = CampoSenha.Text
+            };
+            _UserVM.CreateUser(_user);
+            return true;
         }
     }
 }

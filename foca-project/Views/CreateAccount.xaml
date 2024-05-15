@@ -18,7 +18,7 @@
         <Image x:Name="Icone_pessoa" Source="/Resources/Icone pessoa.png" Width="24" Height="24" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="242,270,0,0"></Image>
         <Image x:Name="Icone_carta" Source="/Resources/Icone email.png" Height="23" Width="23" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="242,345,0,0"></Image>
         <Image x:Name="Icone_cadeado" Source="/Resources/Icone cadeado.png" Height="24" Width="24" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="245,412,0,0"></Image>
-        <Button x:Name="BotãoConfirmar" Height="51" Width="216" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="309,0,0,160" Background="#EEEEEE" BorderThickness="3" BorderBrush="#9B9A9A" Content="Confirmar" FontSize="30" >
+        <Button x:Name="botaoConfirmar" Height="51" Width="216" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="309,0,0,160" Background="#EEEEEE" BorderThickness="3" BorderBrush="#9B9A9A" Content="Confirmar" FontSize="30" >
             <Button.Resources>
                 <Style TargetType="Border">
                     <Setter Property="CornerRadius" Value="10"></Setter>
