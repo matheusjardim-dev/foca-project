@@ -26,7 +26,7 @@ namespace foca_project.Views
         public CreateAccount()
         {
             InitializeComponent();
-            botaoConfirmar.Click += ClickButton;
+            botao_Confirmar.Click += ClickButton;
         }
 
         private void ClickButton(object sender, RoutedEventArgs e)
@@ -44,64 +44,64 @@ namespace foca_project.Views
 
         private void CampoNome_GotFocus(object sender, RoutedEventArgs e)
         {
-            string textoNome = CampoNome.Text;
+            string textoNome = campo_Nome.Text;
             if (textoNome == "Nome")
             {
-                CampoNome.Text = null;
+                campo_Nome.Text = null;
             }
         }
 
         private void CampoNome_LostFocus(object sender, RoutedEventArgs e)
         {
-            string textoNome = CampoNome.Text;
+            string textoNome = campo_Nome.Text;
             if (string.IsNullOrWhiteSpace(textoNome))
             {
-                CampoNome.Text = "Nome";
+                campo_Nome.Text = "Nome";
             }
         }
 
         private void CampoEmail_GotFocus(object sender, RoutedEventArgs e)
         {
-            string textoEmail = CampoEmail.Text;
+            string textoEmail = campo_Email.Text;
             if (textoEmail == "E-mail")
             {
-                CampoEmail.Text = null;
+                campo_Email.Text = null;
             }
         }
 
         private void CampoEmail_LostFocus(object sender, RoutedEventArgs e)
         {
-            string textoEmail = CampoEmail.Text;
+            string textoEmail = campo_Email.Text;
             if (string.IsNullOrWhiteSpace(textoEmail))
             {
-                CampoEmail.Text = "E-mail";
+                campo_Email.Text = "E-mail";
             }
         }
 
         private void CampoSenha_GotFocus(object sender, RoutedEventArgs e)
         {
-            string textoSenha = CampoSenha.Text;
+            string textoSenha = campo_Senha.Text;
             if (textoSenha == "Senha")
             {
-                CampoSenha.Text = null;
+                campo_Senha.Text = null;
             }
         }
 
         private void CampoSenha_LostFocus(object sender, RoutedEventArgs e)
         {
-            string textoSenha = CampoSenha.Text;
+            string textoSenha = campo_Senha.Text;
             if (string.IsNullOrWhiteSpace(textoSenha))
             {
-                CampoSenha.Text = "Senha";
+                campo_Senha.Text = "Senha";
             }
         }
 
         private bool createUser()
         {
             if (
-                string.IsNullOrWhiteSpace(CampoNome.Text) ||
-                string.IsNullOrWhiteSpace(CampoEmail.Text) ||
-                string.IsNullOrWhiteSpace(CampoSenha.Text)
+                string.IsNullOrWhiteSpace(campo_Nome.Text) ||
+                string.IsNullOrWhiteSpace(campo_Email.Text) ||
+                string.IsNullOrWhiteSpace(campo_Senha.Text)
                 )
             {
                 MessageBox.Show("Preencha todos os campos");
@@ -110,9 +110,9 @@ namespace foca_project.Views
 
             User _user = new()
             {
-                Name = CampoNome.Text,
-                Email = CampoEmail.Text,
-                Password = CampoSenha.Text
+                Name = campo_Nome.Text,
+                Email = campo_Email.Text,
+                Password = campo_Senha.Text
             };
             _UserVM.CreateUser(_user);
             return true;

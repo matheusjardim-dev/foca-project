@@ -9,13 +9,13 @@
       Title="LoginPage" Background="#12372A">
 
     <Grid>
-        <Border x:Name="Base" Width="983" MinWidth="983" Height="553" MinHeight="553" Background="#EEEEEE" BorderBrush="#EEEEEE" CornerRadius="30" Margin="148,84,148,84"/>
-        <Image x:Name="Logo" Source="/Resources/Logo v3.png" Width="322" MinWidth="322" Height="322" MinHeight="322" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="224,199,734,199"></Image>
-        <Label Content="Fazer Login" Width="330" MinWidth="330" Height="90" MinHeight="90" Margin="708,162,242,468" FontSize="64" FontFamily="Roboto Serif" VerticalContentAlignment="Center"/>
-        <TextBox x:Name="CampoEmail" Height="46" MinHeight="46" Width="315" MinWidth="315" Margin="715,272,250,402" Background="#EEEEEE" BorderBrush="#9B9A9A" BorderThickness="0 0 0 3" Text="E-mail" TextAlignment="Left" VerticalContentAlignment="Center" FontSize="24" Foreground="#9B9A9A" GotFocus="CampoEmail_GotFocus" LostFocus="CampoEmail_LostFocus"/>
-        <TextBox x:Name="CampoSenha" Height="46" MinHeight="46" Width="315" MinWidth="315" Margin="716,392,250,282" Background="#EEEEEE" BorderBrush="#9B9A9A" BorderThickness="0 0 0 3" Text="Senha" TextAlignment="Left" VerticalContentAlignment="Center" FontSize="24" Foreground="#9B9A9A" GotFocus="CampoSenha_GotFocus" LostFocus="CampoSenha_LostFocus"/>
-        <Image x:Name="Icone_carta" Source="../../Resources/Icone email.png" Height="23" Width="23" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="685,295,0,0"></Image>
-        <Image x:Name="Icone_cadeado" Source="../../Resources/Icone cadeado.png" Height="24" Width="24" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="688,392,0,0"></Image>
+        <Border x:Name="base" Width="983" MinWidth="983" Height="553" MinHeight="553" Background="#EEEEEE" BorderBrush="#EEEEEE" CornerRadius="30" Margin="148,83.5,148,83.5"/>
+        <Image x:Name="logo" Source="/Resources/Logo v3.png" Width="322" MinWidth="322" Height="322" MinHeight="322" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="224,199,734,199"></Image>
+        <Label x:Name="titulo" Content="Fazer Login" Width="330" MinWidth="330" Height="90" MinHeight="90" Margin="708,162,242,468" FontSize="64" FontFamily="Roboto Serif" VerticalContentAlignment="Center"/>
+        <TextBox x:Name="campo_Email" Height="46" MinHeight="46" Width="315" MinWidth="315" Margin="715,272,250,402" Background="#EEEEEE" BorderBrush="#9B9A9A" BorderThickness="0 0 0 3" Text="E-mail" TextAlignment="Left" VerticalContentAlignment="Center" FontSize="24" Foreground="#9B9A9A" GotFocus="CampoEmail_GotFocus" LostFocus="CampoEmail_LostFocus"/>
+        <TextBox x:Name="campo_Senha" Height="46" MinHeight="46" Width="315" MinWidth="315" Margin="716,392,250,282" Background="#EEEEEE" BorderBrush="#9B9A9A" BorderThickness="0 0 0 3" Text="Senha" TextAlignment="Left" VerticalContentAlignment="Center" FontSize="24" Foreground="#9B9A9A" GotFocus="CampoSenha_GotFocus" LostFocus="CampoSenha_LostFocus"/>
+        <Image x:Name="icone_carta" Source="../../Resources/Icone email.png" Height="23" Width="23" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="685,295,0,0"></Image>
+        <Image x:Name="icone_cadeado" Source="../../Resources/Icone cadeado.png" Height="24" Width="24" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="688,392,0,0"></Image>
         <Button x:Name="botaoConfirmar" Height="51" Width="216" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="746,0,0,160" Background="#EEEEEE" BorderThickness="3" BorderBrush="#9B9A9A" Content="Confirmar" FontSize="30" VerticalContentAlignment="Center">
             <Button.Resources>
                 <Style TargetType="Border">
@@ -23,8 +23,8 @@
                 </Style>
             </Button.Resources>
         </Button>
-        <Label x:Name="Texto_Login" Height="27" Width="95" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="810,0,0,137" Content="ou" VerticalContentAlignment="Center"/>
-        <Button x:Name="Botao_Cadastro" Content="Cadastre-se" HorizontalAlignment="Left" VerticalAlignment="Bottom" Background="#EEEEEE" BorderBrush="#EEEEEE" Margin="830,0,0,140" Foreground="Blue" Click="Botao_Cadastro_Click" ></Button>
+        <Label x:Name="texto_Login" Height="27" Margin="807,560,445,133" Content="ou" VerticalContentAlignment="Center"/>
+        <Button x:Name="botao_Cadastro" Content="Cadastre-se" HorizontalAlignment="Left" VerticalAlignment="Bottom" Background="#EEEEEE" BorderBrush="#EEEEEE" Margin="828,0,0,137" Foreground="Blue" Click="Botao_Cadastro_Click" ></Button>
 
     </Grid>
 </Page>

@@ -35,8 +35,8 @@ namespace foca_project.Views
 
         private bool loginUser()
         {
-            string email = CampoEmail.Text;
-            string senha = CampoSenha.Text;
+            string email = campo_Email.Text;
+            string senha = campo_Senha.Text;
 
             if (string.IsNullOrWhiteSpace(email) || email == "E-mail")
             {
@@ -69,37 +69,37 @@ namespace foca_project.Views
 
         private void CampoEmail_GotFocus(object sender, RoutedEventArgs e)
         {
-            string textoEmail = CampoEmail.Text;
+            string textoEmail = campo_Email.Text;
             if (textoEmail == "E-mail")
             {
-                CampoEmail.Text = null;
+                campo_Email.Text = null;
             }
         }
 
         private void CampoEmail_LostFocus(object sender, RoutedEventArgs e)
         {
-            string textoEmail = CampoEmail.Text;
+            string textoEmail = campo_Email.Text;
             if (string.IsNullOrWhiteSpace(textoEmail))
             {
-                CampoEmail.Text = "E-mail";
+                campo_Email.Text = "E-mail";
             }
         }
 
         private void CampoSenha_GotFocus(object sender, RoutedEventArgs e)
         {
-            string textoSenha = CampoSenha.Text;
+            string textoSenha = campo_Senha.Text;
             if (textoSenha == "Senha")
             {
-                CampoSenha.Text = null;
+                campo_Senha.Text = null;
             }
         }
 
         private void CampoSenha_LostFocus(object sender, RoutedEventArgs e)
         {
-            string textoSenha = CampoSenha.Text;
+            string textoSenha = campo_Senha.Text;
             if (string.IsNullOrWhiteSpace(textoSenha))
             {
-                CampoSenha.Text = "Senha";
+                campo_Senha.Text = "Senha";
             }
         }
     }
