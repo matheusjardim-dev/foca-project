@@ -5,27 +5,27 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:foca_project.Views"
       mc:Ignorable="d" 
-      d:DesignHeight="720" d:DesignWidth="1280"
+      d:DesignHeight="720" d:DesignWidth="1280" MinHeight="720" MinWidth="1280"
       Title="CreateAccount" Background="#12372A">
 
     <Grid>
-        <Border x:Name="Base" HorizontalAlignment="Center" VerticalAlignment="Center" Width="983" Height="553" Background="#EEEEEE" BorderBrush="#EEEEEE" CornerRadius="30"></Border>
-        <Image x:Name="Logo" Source="/Resources/Logo v3.png" Width="322" Height="322" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0,0,237,0"></Image>
-        <Label Content="Cadastre-se" HorizontalAlignment="Left" VerticalAlignment="Top" Height="75" Margin="236,146,0,0" FontSize="64" FontFamily="Roboto Serif" VerticalContentAlignment="Center"></Label>
-        <TextBox x:Name="CampoNome" HorizontalAlignment="Left" VerticalAlignment="Top" Height="46" Width="315" Margin="273,257,0,0" Background="#EEEEEE" BorderBrush="#9B9A9A" BorderThickness="0 0 0 3" Text="Nome" TextAlignment="Left" VerticalContentAlignment="Center" FontSize="24" Foreground="#9B9A9A" GotFocus="CampoNome_GotFocus" LostFocus="CampoNome_LostFocus"></TextBox>
-        <TextBox x:Name="CampoEmail" HorizontalAlignment="Left" VerticalAlignment="Top" Height="46" Width="315" Margin="273,328,0,0" Background="#EEEEEE" BorderBrush="#9B9A9A" BorderThickness="0 0 0 3" Text="E-mail" TextAlignment="Left" VerticalContentAlignment="Center" FontSize="24" Foreground="#9B9A9A" GotFocus="CampoEmail_GotFocus" LostFocus="CampoEmail_LostFocus"></TextBox>
-        <TextBox x:Name="CampoSenha" HorizontalAlignment="Left" VerticalAlignment="Top" Height="46" Width="315" Margin="273,399,0,0" Background="#EEEEEE" BorderBrush="#9B9A9A" BorderThickness="0 0 0 3" Text="Senha" TextAlignment="Left" VerticalContentAlignment="Center" FontSize="24" Foreground="#9B9A9A" GotFocus="CampoSenha_GotFocus" LostFocus="CampoSenha_LostFocus"></TextBox>
-        <Image x:Name="Icone_pessoa" Source="/Resources/Icone pessoa.png" Width="24" Height="24" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="242,270,0,0"></Image>
-        <Image x:Name="Icone_carta" Source="/Resources/Icone email.png" Height="23" Width="23" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="242,345,0,0"></Image>
-        <Image x:Name="Icone_cadeado" Source="/Resources/Icone cadeado.png" Height="24" Width="24" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="245,412,0,0"></Image>
-        <Button x:Name="botaoConfirmar" Height="51" Width="216" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="309,0,0,160" Background="#EEEEEE" BorderThickness="3" BorderBrush="#9B9A9A" Content="Confirmar" FontSize="30" >
+        <Border x:Name="base" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Width="983" Height="553" MinWidth="983" MinHeight="553" Background="#EEEEEE" BorderBrush="#EEEEEE" CornerRadius="30" Margin="148.5,83.5,148.5,83.5"></Border>
+        <Image x:Name="logo" Source="/Resources/Logo v3.png" Height="322" MinWidth="322" MinHeight="322" Margin="734,199,224,199"/>
+        <Label x:Name="titulo" Content="Cadastre-se" Width="343" Height="75" MinWidth="343" MinHeight="75" Margin="236,146,678,509" FontSize="64" FontFamily="Roboto Serif" VerticalContentAlignment="Center"/>
+        <TextBox x:Name="campo_Nome" Height="46" Width="315" MinHeight="46" MinWidth="315" Margin="273,259,692,415" Background="#EEEEEE" BorderBrush="#9B9A9A" BorderThickness="0 0 0 3" Text="Nome" TextAlignment="Left" VerticalContentAlignment="Center" FontSize="24" Foreground="#9B9A9A" GotFocus="CampoNome_GotFocus" LostFocus="CampoNome_LostFocus"/>
+        <TextBox x:Name="campo_Email" Height="46" Width="315" MinHeight="46" MinWidth="315" Margin="273,331,692,343" Background="#EEEEEE" BorderBrush="#9B9A9A" BorderThickness="0 0 0 3" Text="E-mail" TextAlignment="Left" VerticalContentAlignment="Center" FontSize="24" Foreground="#9B9A9A" GotFocus="CampoEmail_GotFocus" LostFocus="CampoEmail_LostFocus"/>
+        <TextBox x:Name="campo_Senha" Height="46" Width="315" MinHeight="46" MinWidth="315" Margin="273,401,692,273" Background="#EEEEEE" BorderBrush="#9B9A9A" BorderThickness="0 0 0 3" Text="Senha" TextAlignment="Left" VerticalContentAlignment="Center" FontSize="24" Foreground="#9B9A9A" GotFocus="CampoSenha_GotFocus" LostFocus="CampoSenha_LostFocus"/>
+        <Image x:Name="icone_pessoa" Source="/Resources/Icone pessoa.png" Width="24" Height="24" MinWidth="24" MinHeight="24" Margin="242,270,1014,426"/>
+        <Image x:Name="icone_carta" Source="/Resources/Icone email.png" Height="23" Width="23" MinHeight="23" MinWidth="23" Margin="242,342,1014,354"/>
+        <Image x:Name="icone_cadeado" Source="/Resources/Icone cadeado.png" Height="24" Width="24" MinHeight="24" MinWidth="24" Margin="242,412,1014,284"/>
+        <Button x:Name="botao_Confirmar" Height="51" Width="216" MinHeight="51" MinWidth="216" Margin="309,509,756,160" Background="#EEEEEE" BorderThickness="3" BorderBrush="#9B9A9A" Content="Confirmar" FontSize="30" >
             <Button.Resources>
                 <Style TargetType="Border">
                     <Setter Property="CornerRadius" Value="10"></Setter>
                 </Style>
             </Button.Resources>
         </Button>
-        <Label x:Name="TextoLogin" Height="27" Width="95" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="369,0,0,137" Content="ou Faça Login" VerticalContentAlignment="Center"/>
-        <Button x:Name="Faca_login" Content="Faça Login" HorizontalAlignment="Left" VerticalAlignment="Bottom" Background="#EEEEEE" BorderBrush="#EEEEEE" Margin="391,0,0,140" Foreground="Blue" Click="Faca_login_Click" ></Button>
+        <Label x:Name="texto_Login" Height="27" Width="23" MinHeight="27" MinWidth="23" Margin="378,560,878,133" Content="ou Faça Login" VerticalContentAlignment="Center"/>
+        <Button x:Name="faca_login" Content="Faça Login" Height="20" Width="60" MinHeight="20" MinWidth="60" Background="#EEEEEE" BorderBrush="#EEEEEE" Margin="402,563,818,137" Foreground="Blue" Click="Faca_login_Click" />
     </Grid>
 </Page>
