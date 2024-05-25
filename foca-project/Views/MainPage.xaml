@@ -6,9 +6,10 @@
       xmlns:local="clr-namespace:foca_project.Views"
       mc:Ignorable="d" 
       d:DesignHeight="720" d:DesignWidth="1280" MinHeight="720" MinWidth="1280"
-      Title="MainPage">
+      Title="MainPage" ShowsNavigationUI="False" WindowHeight="720" WindowWidth="1280">
 
     <Grid>
-        
+        <Frame x:Name="barra_lateral" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" MinWidth="300" MinHeight="720" Margin="0,0,980,0" Source="/Views/Templates/Sidebar.xaml" NavigationUIVisibility="Hidden"/>
+        <Frame x:Name="principal" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" MinHeight="720" MinWidth="980" Margin="300,0,0,0" NavigationUIVisibility="Hidden" Source="/Views/TaskPage.xaml"/>
     </Grid>
 </Page>

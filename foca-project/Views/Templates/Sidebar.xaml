@@ -10,6 +10,19 @@
       Title="Sidebar">
 
     <Grid>
-        
+
+        <Label x:Name="titulo" Content="Pessoa Logada" FontSize="30" Margin="10,25,60,643" MinWidth="70" MinHeight="20"/>
+        <TreeView x:Name="barra_lateral" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="0,100,0,0" FontSize="30" >
+            <TreeViewItem Header="Parent">
+                <TreeViewItem Header="Child1"/>
+                <TreeViewItem Header="Child2"/>
+                <TreeViewItem Header="Child2"/>
+
+            </TreeViewItem>
+        </TreeView>
+
+        <Button x:Name="configuracoes" Width="30" Height="30" Margin="240,40,30,650" Background="#EEEEEE" BorderBrush="AliceBlue">
+            <Image Source="/Resources/Icone engrenagem.png" Stretch="Fill"/>
+        </Button>
     </Grid>
 </Page>
