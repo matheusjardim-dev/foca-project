@@ -16,13 +16,14 @@ using System.Windows.Shapes;
 namespace foca_project.Views.Templates
 {
     /// <summary>
-    /// Interação lógica para Task.xam
+    /// Interação lógica para Activity.xam
     /// </summary>
-    public partial class Task : Page
+    public partial class Activity : Page
     {
-        public Task()
+        public Activity(string name)
         {
             InitializeComponent();
+            titulo.Content = name;
         }
     }
 }

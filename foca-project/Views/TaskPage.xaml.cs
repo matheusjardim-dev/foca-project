@@ -1,4 +1,5 @@
-﻿using System;
+﻿using foca_project.Views.Templates;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,6 +24,8 @@ namespace foca_project.Views
         public TaskPage()
         {
             InitializeComponent();
+
+            frame_Task.Navigate(new Activity("teste"));
         }
     }
 }

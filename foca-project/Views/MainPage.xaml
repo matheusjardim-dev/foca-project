@@ -9,7 +9,11 @@
       Title="MainPage" ShowsNavigationUI="False" WindowHeight="720" WindowWidth="1280">
 
     <Grid>
-        <Frame x:Name="barra_lateral" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" MinWidth="300" MinHeight="720" Margin="0,0,980,0" Source="/Views/Templates/Sidebar.xaml" NavigationUIVisibility="Hidden"/>
-        <Frame x:Name="principal" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" MinHeight="720" MinWidth="980" Margin="300,0,0,0" NavigationUIVisibility="Hidden" Source="/Views/TaskPage.xaml"/>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="300" MinWidth="300"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Frame x:Name="barra_lateral" Grid.Column="0" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" MinWidth="300" MinHeight="720" NavigationUIVisibility="Hidden" Background="Red"/>
+        <Frame x:Name="principal" Grid.Column="1" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" MinHeight="720" MinWidth="980" NavigationUIVisibility="Hidden" Source="/Views/TaskPage.xaml" Background="Blue"/>
     </Grid>
 </Page>
