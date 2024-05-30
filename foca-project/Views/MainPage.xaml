@@ -14,6 +14,6 @@
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
         <Frame x:Name="barra_lateral" Grid.Column="0" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" MinWidth="300" MinHeight="720" NavigationUIVisibility="Hidden" Background="Red"/>
-        <Frame x:Name="principal" Grid.Column="1" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" MinHeight="720" MinWidth="980" NavigationUIVisibility="Hidden" Source="/Views/TaskPage.xaml" Background="Blue"/>
+        <Frame x:Name="principal" Grid.Column="1" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" MinHeight="720" MinWidth="980" NavigationUIVisibility="Hidden" Background="Blue"/>
     </Grid>
 </Page>

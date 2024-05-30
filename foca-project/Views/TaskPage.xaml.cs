@@ -21,11 +21,17 @@ namespace foca_project.Views
     /// </summary>
     public partial class TaskPage : Page
     {
-        public TaskPage()
+        public TaskPage(string nome)
         {
             InitializeComponent();
+            page_titulo.Content = nome;
 
-            frame_Task.Navigate(new Activity("teste"));
+            NavegarParaTask();
+        }
+
+        private void NavegarParaTask()
+        {
+            frame_task.Navigate(new Activity("teste"));
         }
     }
 }

@@ -7,9 +7,24 @@
       mc:Ignorable="d" 
       d:DesignHeight="720" d:DesignWidth="980"
       MinHeight="720" MinWidth="980"
+      Background="#FFFFFF"
       Title="TaskPage">
 
     <Grid>
-        <Frame x:Name="frame_Task" Height="80" Width="980" HorizontalContentAlignment="Center" />
+        <Border x:Name="barra_superior" Height="100" MinHeight="100" MinWidth="980" HorizontalAlignment="Stretch" VerticalAlignment="Top">
+            <Label x:Name="page_titulo" Content="Título" Height="100" Width="490" MinHeight="100" MinWidth="490" FontSize="80" VerticalAlignment="Stretch" HorizontalAlignment="Left" Margin="10,0,0,0" VerticalContentAlignment="Center"/>
+        </Border>
+        <ScrollViewer HorizontalAlignment="Stretch" VerticalAlignment="Stretch" MinWidth="980" MinHeight="620" Margin="0,100,0,0">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="120" MinHeight="120"/>
+                </Grid.RowDefinitions>
+
+                <Frame x:Name="frame_task" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Grid.Row="0" Width="900" Height="120" MinHeight="120" MinWidth="900" Margin="0,5,0,5"/>
+            </Grid>
+
+
+        </ScrollViewer>
+
     </Grid>
 </Page>

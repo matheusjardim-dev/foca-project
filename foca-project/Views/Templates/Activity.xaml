@@ -7,6 +7,7 @@
       mc:Ignorable="d" 
       d:DesignHeight="80" d:DesignWidth="860"
       MinHeight="80" MinWidth="860"
+      MaxHeight="100"
       Title="Task">
 
     <Grid>
