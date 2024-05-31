@@ -10,17 +10,32 @@
       Background="#FFFFFF"
       Title="TaskPage">
 
+    <Page.Resources>
+        <ControlTemplate x:Key="BotaoArredondado" TargetType="Button">
+            <Border Background="{TemplateBinding Background}"
+                    BorderBrush="{TemplateBinding BorderBrush}"
+                    BorderThickness="1"
+                    CornerRadius="10">
+                <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            </Border>
+        </ControlTemplate>
+    </Page.Resources>
+
     <Grid>
         <Border x:Name="barra_superior" Height="100" MinHeight="100" MinWidth="980" HorizontalAlignment="Stretch" VerticalAlignment="Top">
-            <Label x:Name="page_titulo" Content="Título" Height="100" Width="490" MinHeight="100" MinWidth="490" FontSize="80" VerticalAlignment="Stretch" HorizontalAlignment="Left" Margin="10,0,0,0" VerticalContentAlignment="Center"/>
-        </Border>
-        <ScrollViewer HorizontalAlignment="Stretch" VerticalAlignment="Stretch" MinWidth="980" MinHeight="620" Margin="0,100,0,0">
             <Grid>
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="120" MinHeight="120"/>
-                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+                <Label x:Name="page_titulo" Content="Título" Height="100" Width="490" MinHeight="100" MinWidth="490" FontSize="80" HorizontalAlignment="Left" Margin="10,0,0,0" VerticalContentAlignment="Center" Grid.Column="0" Grid.ColumnSpan="2"/>
+                <Button x:Name="nova_task" Content="Nova" Height="50" Width="70" MinHeight="50" MinWidth="70" Margin="881,25,29,25" Background="#D9D9D9" Grid.Column="1" BorderBrush="#D9D9D9" Template="{StaticResource BotaoArredondado}" Click="nova_task_Click"/>
+            </Grid>
+        </Border>
 
-                <Frame x:Name="frame_task" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Grid.Row="0" Width="900" Height="120" MinHeight="120" MinWidth="900" Margin="0,5,0,5"/>
+        <ScrollViewer HorizontalAlignment="Stretch" VerticalAlignment="Stretch" MinWidth="980" MinHeight="620" Margin="0,100,0,0">
+            <Grid x:Name="task_grid">
+                
             </Grid>
 
 

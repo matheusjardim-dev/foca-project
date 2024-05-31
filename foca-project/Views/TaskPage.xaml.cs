@@ -26,12 +26,32 @@ namespace foca_project.Views
             InitializeComponent();
             page_titulo.Content = nome;
 
-            NavegarParaTask();
+            
         }
 
-        private void NavegarParaTask()
+        /*private void NavegarParaTask()
         {
             frame_task.Navigate(new Activity("teste"));
+        }*/
+
+        private void nova_task_Click(object sender, RoutedEventArgs e)
+        {
+            RowDefinition newRow = new RowDefinition();
+            newRow.Height = new GridLength(120);
+            task_grid.RowDefinitions.Add(newRow);
+
+            Frame newTaskFrame = new Frame();
+            newTaskFrame.HorizontalAlignment = HorizontalAlignment.Stretch;
+            newTaskFrame.VerticalAlignment = VerticalAlignment.Stretch;
+            newTaskFrame.Margin = new Thickness(0, 5, 0, 5);
+            newTaskFrame.MinHeight = 120;
+
+            newTaskFrame.Navigate(new Activity("Teste2"));
+
+            task_grid.Children.Add(newTaskFrame);
+            Grid.SetRow(newTaskFrame, task_grid.RowDefinitions.Count - 1);
+
+            
         }
     }
 }
