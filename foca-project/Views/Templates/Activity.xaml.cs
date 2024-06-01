@@ -1,4 +1,5 @@
-﻿using System;
+﻿using foca_project.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,10 +21,14 @@ namespace foca_project.Views.Templates
     /// </summary>
     public partial class Activity : Page
     {
-        public Activity(string name)
+        private ActivityModel activityModel;
+        public Activity(ActivityModel model)
         {
             InitializeComponent();
-            titulo.Content = name;
+            activityModel = model;
+            DataContext = activityModel;
         }
+
+        public ActivityModel ActivityModel => activityModel;
     }
 }

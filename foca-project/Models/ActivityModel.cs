@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace foca_project.Models
 {
-    public class Activity
+    public class ActivityModel
     {
         public int Id { get; set; }
         public string Title { get; set; }

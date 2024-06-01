@@ -7,18 +7,18 @@
       mc:Ignorable="d" 
       d:DesignHeight="80" d:DesignWidth="860"
       MinHeight="80" MinWidth="860"
-      MaxHeight="100"
+      MaxHeight="100" MaxWidth="1000"
       Title="Task">
 
     <Grid>
-        <Rectangle x:Name="fundo" Fill="#D9D9D9" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Stretch="Fill" RadiusX="20" RadiusY="20"/>
-        <Border x:Name="divisao" Background="Transparent" BorderBrush="#9B9A9A" BorderThickness="1,0,1,0" Height="80" Width="195" MinHeight="80" MinWidth="195" Margin="494,0,171,0"/>
-        <Label x:Name="titulo" Content="Titulo" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="11,40,366,0" FontSize="20" Height="40" Width="483" MinHeight="40" MinWidth="483"/>
+        <Rectangle x:Name="fundo" Fill="#D9D9D9" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Stretch="Fill" RadiusX="20" RadiusY="20" Stroke="#6A6A6A" StrokeThickness="2"/>
+        <Border x:Name="divisao" Background="Transparent" BorderBrush="#9B9A9A" BorderThickness="1,0,1,0" Width="195" MinHeight="76" MinWidth="195" Margin="494,2,171,2"/>
+        <TextBox x:Name="titulo" Text="Título"  HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="19,40,371,5" FontSize="20" Width="470" MinHeight="35" MinWidth="470" Background="#D9D9D9" BorderThickness="0"/>
         <Label x:Name="label_titulo" Content="Titulo:" Height="30" Width="50" MinHeight="30" MinWidth="50" Margin="10,5,800,45" FontFamily="Inter" FontSize="15" Foreground="#6A6A6A"/>
         <Label x:Name="label_data" Content="Data de entrega:" Height="30" Width="120" MinHeight="30" MinWidth="50" Margin="494,5,246,45" FontFamily="Inter" FontSize="15" Foreground="#6A6A6A"/>
         <DatePicker x:Name="data" Width="152" Height="30" MinWidth="152" MinHeight="30" Margin="516,45,192,5" BorderBrush="{x:Null}"/>
         <Label x:Name="label_status" Content="Status:" Height="30" Width="50" MinHeight="30" MinWidth="50" Margin="694,5,116,45" FontFamily="Inter" FontSize="15" Foreground="#6A6A6A"/>
-        <ComboBox Height="40" Margin="694,40,19,0" Width="147" IsReadOnly="True">
+        <ComboBox Margin="694,40,19,5" Width="147" IsReadOnly="True">
             <ComboBoxItem Content="Atrasado" Background="Red" Foreground="White"/>
             <ComboBoxItem Content="Concluído" Background="Green" Foreground="White"/>
             <ComboBoxItem Content="Pendente" Background="Yellow" Foreground="Black"/>

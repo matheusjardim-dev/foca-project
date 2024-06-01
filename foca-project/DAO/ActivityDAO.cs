@@ -11,16 +11,16 @@ namespace foca_project.DAO
     public class ActivityDAO
     {
         private static CRUDDAO _CRUDDAO = new CRUDDAO();
-        public List<Activity> GetActivitiesByUser(int iduser) 
+        public List<ActivityModel> GetActivitiesByUser(int iduser) 
         {
-            List<Activity> activities = new List<Activity>();
+            List<ActivityModel> activities = new List<ActivityModel>();
             MySqlCommand cmd = _CRUDDAO.GetActivitiesByUser(iduser);
 
             using (MySqlDataReader reader = cmd.ExecuteReader())
             {
                 while (reader.Read())
                 {
-                    activities.Add(new Activity
+                    activities.Add(new ActivityModel
                     {
                         Id = Convert.ToInt32(reader["idtasks"]),
                         Title = reader["title"].ToString(),
