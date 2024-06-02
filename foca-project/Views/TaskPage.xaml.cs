@@ -33,12 +33,14 @@ namespace foca_project.Views
 
         private void nova_task_Click(object sender, RoutedEventArgs e)
         {
-            NewActivityWindow newActivityWindow = new NewActivityWindow();
+            NewActivityWindow newActivityWindow = new NewActivityWindow(this);
             newActivityWindow.Show();
         }
 
         public void AdicionarTask(ActivityModel model)
         {
+            model.IsReadOnly = true;
+
             RowDefinition newRow = new RowDefinition();
             newRow.Height = new GridLength(120);
             task_grid.RowDefinitions.Add(newRow);

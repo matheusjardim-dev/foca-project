@@ -17,9 +17,7 @@ namespace foca_project
             MainWindow mw = new MainWindow();
             mw.Show();
 
-            NewActivityWindow naw = new NewActivityWindow();
-            naw.Show();
-            naw.Topmost = true;
+            
         }
     }
 

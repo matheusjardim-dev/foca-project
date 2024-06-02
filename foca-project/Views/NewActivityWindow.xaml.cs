@@ -23,12 +23,14 @@ namespace foca_project.Views
     {
         private TaskPage taskpage;
         private Activity activity;
-        public NewActivityWindow()
+        public NewActivityWindow(TaskPage taskpage)
         {
             InitializeComponent();
-            activity = new Activity(new ActivityModel { Title = "Insira um título" });
+            this.taskpage = taskpage;
+            var model = new ActivityModel { Title = "Insira um título" };
+            activity = new Activity(model);
             frame_activity.Navigate(activity);
-            taskpage = new TaskPage("teste");
+            
         }
 
         private void descricao_GotFocus(object sender, RoutedEventArgs e)
@@ -59,6 +61,7 @@ namespace foca_project.Views
         {
             var model = activity.ActivityModel;
             model.Description = descricao.Text;
+            model.Date_end = activity.datePicker.SelectedDate;
             taskpage.AdicionarTask(model);
             this.Close();
         }
