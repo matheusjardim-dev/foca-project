@@ -7,6 +7,6 @@
         mc:Ignorable="d" WindowState="Maximized"
         Title="MainWindow" Height="720" Width="1280" MinWidth="1280" MinHeight="720">
     <Grid>
-        <Frame x:Name="Main" NavigationUIVisibility="Hidden" Source="/Views/LoginPage.xaml"></Frame>
+        <Frame x:Name="Main" NavigationUIVisibility="Hidden" Source="/Views/MainPage.xaml"></Frame>
     </Grid>
 </Window>

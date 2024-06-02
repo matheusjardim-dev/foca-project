@@ -12,7 +12,7 @@ namespace foca_project.ViewModels
     {
         private static ActivityDAO _ActivityDAO = new ActivityDAO();
 
-        public List<Activity> GetActivitiesByUser(int iduser)
+        public List<ActivityModel> GetActivitiesByUser(int iduser)
         {
             return _ActivityDAO.GetActivitiesByUser(iduser);
         }

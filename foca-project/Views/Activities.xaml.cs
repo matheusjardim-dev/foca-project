@@ -32,7 +32,7 @@ namespace foca_project.Views
         {
             //TODO: Get user id from... (where?)
             int iduser = 1;
-            List<Activity> activities = _ActivityVM.GetActivitiesByUser(iduser);
+            List<ActivityModel> activities = _ActivityVM.GetActivitiesByUser(iduser);
             ActivitiesList.ItemsSource = activities;
         }
     }

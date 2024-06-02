@@ -33,7 +33,7 @@ namespace foca_project.Views
             loginUser();
             if (loginUser())
             {
-                NavigationService.Navigate(new Uri("/Views/MainPage.xaml", UriKind.Relative));
+                NavigationService.Navigate(new MainPage());
             }
         }
 
