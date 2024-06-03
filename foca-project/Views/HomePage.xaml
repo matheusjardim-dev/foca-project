@@ -6,9 +6,61 @@
       xmlns:local="clr-namespace:foca_project.Views"
       mc:Ignorable="d" 
       d:DesignHeight="720" d:DesignWidth="980"
+      MinHeight="720" MinWidth="980"
+      HorizontalAlignment="Stretch" VerticalAlignment="Stretch"
+      Background="White"
       Title="HomePage">
 
+    <Page.Resources>
+        <ControlTemplate x:Key="BotaoArredondado" TargetType="Button">
+            <Border Background="{TemplateBinding Background}"
+            BorderBrush="{TemplateBinding BorderBrush}"
+            BorderThickness="1"
+            CornerRadius="10">
+                <ContentPresenter HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
+            </Border>
+        </ControlTemplate>
+    </Page.Resources>
+
     <Grid>
-        <Rectangle x:Name="fundo" Fill="Red"></Rectangle>
+        <Rectangle Height="195" VerticalAlignment="Top" HorizontalAlignment="Stretch" Fill="#12372A"/>
+        <Image Source="/Resources/Banner verde.png" Height="195" VerticalAlignment="Top" HorizontalAlignment="Stretch"/>
+        <Ellipse Height="165" Width="165" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="35,122,780,433" Fill="White"/>
+        <Image Source="pack://application:,,,/Resources/Icone casa.png" Width="130" Height="130" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="52,140,798,450"/>
+        <Label x:Name="titulo" Content="Home" FontSize="30" FontFamily="Rockwell" Height="50" Width="100" HorizontalAlignment="Left" VerticalAlignment="Top" HorizontalContentAlignment="Center"  Margin="67,268,813,402"/>
+
+        <Button x:Name="nova_pasta" Height="55" Width="170" FontSize="20" HorizontalContentAlignment="Right" Margin="46,360,762,304" Template="{StaticResource BotaoArredondado}" Background="#42977A" HorizontalAlignment="Left" VerticalAlignment="Top">
+            <StackPanel>
+                <Grid>
+                    <Label Content="Nova pasta" Width="112" Margin="46,6,10,-5" VerticalAlignment="Center"/>
+                    <Image Source="pack://application:,,,/Resources/Icone mais.png" Height="26" Width="26" VerticalAlignment="Center" Margin="6,12,136,0" />
+                </Grid>
+                
+            </StackPanel>
+        </Button>
+
+        <ScrollViewer x:Name="lista_pastas" Margin="370,243,0,0" >
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="200"/>
+                    <ColumnDefinition Width="200"/>
+                    <ColumnDefinition Width="200"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="200"/>
+                    <RowDefinition Height="200"/>
+                    <RowDefinition Height="200"/>
+                </Grid.RowDefinitions>
+
+                <StackPanel>
+                    <Image Source="pack://application:,,,/Resources/Icone pasta.png" Height="150" Width="150" Margin="5"/>
+                    <Label Content="teste" HorizontalContentAlignment="Center" FontSize="20"/>
+                </StackPanel>
+                <StackPanel Grid.Row="0" Grid.Column="1">
+                    <Image Source="pack://application:,,,/Resources/Icone pasta.png" Height="150" Width="150" Margin="5"/>
+                    <Label Content="teste" HorizontalContentAlignment="Center" FontSize="20"/>
+                </StackPanel>
+            </Grid>
+        </ScrollViewer>
     </Grid>
 </Page>
