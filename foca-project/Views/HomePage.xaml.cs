@@ -24,5 +24,10 @@ namespace foca_project.Views
         {
             InitializeComponent();
         }
+
+        private void nova_pasta_Click(object sender, RoutedEventArgs e)
+        {
+            frame_nova_pasta.Navigate(new NewFolderPage());
+        }
     }
 }

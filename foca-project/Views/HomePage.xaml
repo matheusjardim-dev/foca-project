@@ -29,7 +29,7 @@
         <Image Source="pack://application:,,,/Resources/Icone casa.png" Width="130" Height="130" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="52,140,798,450"/>
         <Label x:Name="titulo" Content="Home" FontSize="30" FontFamily="Rockwell" Height="50" Width="100" HorizontalAlignment="Left" VerticalAlignment="Top" HorizontalContentAlignment="Center"  Margin="67,268,813,402"/>
 
-        <Button x:Name="nova_pasta" Height="55" Width="170" FontSize="20" HorizontalContentAlignment="Right" Margin="46,360,762,304" Template="{StaticResource BotaoArredondado}" Background="#42977A" HorizontalAlignment="Left" VerticalAlignment="Top">
+        <Button x:Name="nova_pasta" Height="55" Width="170" FontSize="20" HorizontalContentAlignment="Right" Margin="46,360,762,304" Template="{StaticResource BotaoArredondado}" Background="#42977A" HorizontalAlignment="Left" VerticalAlignment="Top" Click="nova_pasta_Click">
             <StackPanel>
                 <Grid>
                     <Label Content="Nova pasta" Width="112" Margin="46,6,10,-5" VerticalAlignment="Center"/>
@@ -62,5 +62,6 @@
                 </StackPanel>
             </Grid>
         </ScrollViewer>
+        <Frame x:Name="frame_nova_pasta" HorizontalAlignment="Left" Height="280" Margin="10,431,0,0" VerticalAlignment="Top" Width="295"/>
     </Grid>
 </Page>
