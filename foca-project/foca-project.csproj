@@ -10,22 +10,45 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Resources\Banner verde.png" />
     <None Remove="Resources\Icone cadeado.png" />
+    <None Remove="Resources\Icone casa.png" />
     <None Remove="Resources\Icone email.png" />
     <None Remove="Resources\Icone engrenagem.png" />
+    <None Remove="Resources\Icone mais.png" />
+    <None Remove="Resources\Icone olho cinza.png" />
+    <None Remove="Resources\Icone pasta.png" />
     <None Remove="Resources\Icone pessoa.png" />
     <None Remove="Resources\Logo v3.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Resources\Banner verde.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
   </ItemGroup>
 
   <ItemGroup>
     <Resource Include="Resources\Icone cadeado.png">
       <CopyToOutputDirectory></CopyToOutputDirectory>
     </Resource>
+    <Resource Include="Resources\Icone casa.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
     <Resource Include="Resources\Icone email.png">
       <CopyToOutputDirectory></CopyToOutputDirectory>
     </Resource>
     <Resource Include="Resources\Icone engrenagem.png">
       <CopyToOutputDirectory></CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Icone mais.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Icone olho cinza.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Icone pasta.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
     <Resource Include="Resources\Icone pessoa.png">
       <CopyToOutputDirectory></CopyToOutputDirectory>
