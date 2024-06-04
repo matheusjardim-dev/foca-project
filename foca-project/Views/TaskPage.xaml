@@ -28,7 +28,7 @@
                     <ColumnDefinition Width="*"/>
                     <ColumnDefinition Width="Auto"/>
                 </Grid.ColumnDefinitions>
-                <Label x:Name="page_titulo" Content="Título" Height="100" Width="490" MinHeight="100" MinWidth="490" FontSize="80" HorizontalAlignment="Left" Margin="10,0,0,0" VerticalContentAlignment="Center" Grid.Column="0" Grid.ColumnSpan="2"/>
+                <Label x:Name="page_titulo" Content="Título" Height="100" Width="821" MinHeight="100" MinWidth="490" FontSize="80" HorizontalAlignment="Left" Margin="10,0,0,0" VerticalContentAlignment="Center" Grid.Column="0" Grid.ColumnSpan="2"/>
                 <Button x:Name="nova_task" Content="Nova" Height="50" Width="70" MinHeight="50" MinWidth="70" Margin="881,25,29,25" Background="#D9D9D9" Grid.Column="1" BorderBrush="#D9D9D9" Template="{StaticResource BotaoArredondado}" Click="nova_task_Click"/>
             </Grid>
         </Border>
