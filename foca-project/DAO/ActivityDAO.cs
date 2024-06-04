@@ -34,5 +34,13 @@ namespace foca_project.DAO
             }
         }
 
+        public void CreateActivity(ActivityModel activity)
+        {
+            string[] properties = { "title", "description", "date_init", "date_end", "category_idcategory", "users_idusers" };
+            string[] values = { activity.Title, activity.Description, activity.Date_init.ToString("yyyy-MM-dd"), activity.Date_end.ToString("yyyy-MM-dd"), "1", activity.Id_user.ToString() };
+
+            MySqlCommand cmd = _CRUDDAO.Create("tasks", properties, values);
+            cmd.ExecuteNonQuery();
+        }
     }
 }
