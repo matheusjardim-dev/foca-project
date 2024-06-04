@@ -73,5 +73,11 @@ namespace foca_project.Views.Templates
         {
             VerificaEstado();
         }
+
+        private void botao_visualizar_Click(object sender, RoutedEventArgs e)
+        {
+            EditActivityWindow eaw = new EditActivityWindow();
+            eaw.Show();
+        }
     }
 }

@@ -1,4 +1,6 @@
-﻿using System;
+﻿using foca_project.Models;
+using foca_project.Views.Templates;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -22,6 +24,12 @@ namespace foca_project.Views
         public EditActivityWindow()
         {
             InitializeComponent();
+        }
+
+
+        private void data_SelectedDateChanged(object sender, SelectionChangedEventArgs e)
+        {
+
         }
     }
 }
