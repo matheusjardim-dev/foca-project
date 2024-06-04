@@ -21,5 +21,20 @@ namespace foca_project.ViewModels
         {
             _ActivityDAO.CreateActivity(activity);
         }
+
+        public void UpdateActivity(ActivityModel activity)
+        {
+            _ActivityDAO.UpdateActivity(activity);
+        }
+
+        public void DeleteActivity(int idActivity)
+        {
+            _ActivityDAO.DeleteActivity(idActivity);
+        }
+
+        public ActivityModel GetActivityById(int idActivity)
+        {
+            return _ActivityDAO.GetActivityById(idActivity);
+        }
     }
 }
