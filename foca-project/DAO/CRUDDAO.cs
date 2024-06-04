@@ -37,6 +37,15 @@ namespace foca_project.DAO
             return cmd;
         }
 
+        public MySqlCommand SelectById(string table, string[] where)
+        {
+            string query = "SELECT * FROM " + table + " WHERE " + where;
+
+            MySqlCommand cmd = new MySqlCommand(query, _conn);
+
+            return cmd;
+        }
+
         public MySqlCommand Create(string table, string[] properties, string[] values)
         {
             string columns = string.Join(", ", properties);
