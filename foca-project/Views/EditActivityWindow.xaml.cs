@@ -1,5 +1,4 @@
-﻿using foca_project.Views.Templates;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -11,21 +10,18 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace foca_project.Views
 {
     /// <summary>
-    /// Interação lógica para MainPage.xam
+    /// Lógica interna para EditActivityWindow.xaml
     /// </summary>
-    public partial class MainPage : Page
+    public partial class EditActivityWindow : Window
     {
-        public MainPage()
+        public EditActivityWindow()
         {
             InitializeComponent();
-            barra_lateral.Navigate(new Sidebar());
-            principal.Navigate(new TaskPage("Estrutura de dados"));
         }
     }
 }
