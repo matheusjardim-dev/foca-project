@@ -1,4 +1,5 @@
 ﻿using foca_project.Models;
+using foca_project.ViewModels;
 using foca_project.Views.Templates;
 using System;
 using System.Collections.Generic;
@@ -21,13 +22,14 @@ namespace foca_project.Views
     /// </summary>
     public partial class NewActivityWindow : Window
     {
+        ActivityVM _ActivityVM = new ActivityVM();
         private TaskPage taskpage;
         private Activity activity;
         public NewActivityWindow(TaskPage taskpage)
         {
             InitializeComponent();
             this.taskpage = taskpage;
-            var model = new ActivityModel { Title = "Insira um título" };
+            var model = new ActivityModel { Title = "Insira um título" , Date_end = DateTime.Now};
             activity = new Activity(model);
             frame_activity.Navigate(activity);
             
@@ -61,8 +63,14 @@ namespace foca_project.Views
         {
             var model = activity.ActivityModel;
             model.Description = descricao.Text;
-            model.Date_end = activity.datePicker.SelectedDate;
-            taskpage.AdicionarTask(model);
+            model.Date_end = (DateTime)activity.datePicker.SelectedDate;
+            model.Id_user = 1;
+            _ActivityVM.CreateActivity(model);
+            List<ActivityModel> tasks = _ActivityVM.GetActivitiesByUser(1);
+            foreach (ActivityModel task in tasks)
+            {
+                taskpage.AdicionarTask(task);
+            }
             this.Close();
         }
     }

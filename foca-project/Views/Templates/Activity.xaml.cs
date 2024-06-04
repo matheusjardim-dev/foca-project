@@ -34,15 +34,9 @@ namespace foca_project.Views.Templates
 
         private void VerificaEstado()
         {
-            if (activityModel.Date_end == null)
-            {
-                label_atrasado.Visibility = Visibility.Hidden;
-                label_pendente.Visibility = Visibility.Hidden;
-                return;
-            }
-
+            
             DateTime hoje = DateTime.Today;
-            DateTime dataSelecionada = activityModel.Date_end.Value;
+            DateTime dataSelecionada = activityModel.Date_end;
 
             if(dataSelecionada < hoje)
             {

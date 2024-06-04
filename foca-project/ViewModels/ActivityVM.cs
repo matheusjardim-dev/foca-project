@@ -16,5 +16,10 @@ namespace foca_project.ViewModels
         {
             return _ActivityDAO.GetActivitiesByUser(iduser);
         }
+
+        public void CreateActivity(ActivityModel activity)
+        {
+            _ActivityDAO.CreateActivity(activity);
+        }
     }
 }

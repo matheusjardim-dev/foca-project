@@ -1,4 +1,5 @@
 ﻿using foca_project.Models;
+using foca_project.ViewModels;
 using foca_project.Views.Templates;
 using System;
 using System.Collections.Generic;
@@ -22,13 +23,12 @@ namespace foca_project.Views
     /// </summary>
     public partial class TaskPage : Page
     {
-        
+        ActivityVM _ActivityVM = new ActivityVM();
+
         public TaskPage(string nome)
         {
             InitializeComponent();
             page_titulo.Content = nome;
-            
-            
         }
 
         private void nova_task_Click(object sender, RoutedEventArgs e)
@@ -39,6 +39,9 @@ namespace foca_project.Views
 
         public void AdicionarTask(ActivityModel model)
         {
+            int iduser = 1;
+            List<ActivityModel> activities = _ActivityVM.GetActivitiesByUser(iduser);
+
             model.IsReadOnly = true;
 
             RowDefinition newRow = new RowDefinition();

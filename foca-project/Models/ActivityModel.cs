@@ -12,7 +12,7 @@ namespace foca_project.Models
         public string Title { get; set; }
         public string Description { get; set; }
         public DateTime Date_init { get; set; }
-        public DateTime? Date_end { get; set; }
+        public DateTime Date_end { get; set; }
         public int Id_user { get; set; }
         public string Category { get; set; }
         public bool IsReadOnly { get; set; }
