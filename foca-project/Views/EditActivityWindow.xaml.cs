@@ -31,5 +31,22 @@ namespace foca_project.Views
         {
 
         }
+
+        private void concluir_Click(object sender, RoutedEventArgs e)
+        {
+            estado_concluido.Visibility = Visibility.Visible;
+            concluir.Visibility = Visibility.Hidden;
+            voltar.Visibility = Visibility.Visible;
+        }
+
+        private void voltar_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void excluir_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
