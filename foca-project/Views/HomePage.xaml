@@ -40,7 +40,7 @@
         </Button>
 
         <ScrollViewer x:Name="lista_pastas" Margin="370,243,0,0" >
-            <Grid>
+            <Grid x:Name="lista_pastas_grid">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="200"/>
                     <ColumnDefinition Width="200"/>
@@ -52,14 +52,7 @@
                     <RowDefinition Height="200"/>
                 </Grid.RowDefinitions>
 
-                <StackPanel>
-                    <Image Source="pack://application:,,,/Resources/Icone pasta.png" Height="150" Width="150" Margin="5"/>
-                    <Label Content="teste" HorizontalContentAlignment="Center" FontSize="20"/>
-                </StackPanel>
-                <StackPanel Grid.Row="0" Grid.Column="1">
-                    <Image Source="pack://application:,,,/Resources/Icone pasta.png" Height="150" Width="150" Margin="5"/>
-                    <Label Content="teste" HorizontalContentAlignment="Center" FontSize="20"/>
-                </StackPanel>
+                
             </Grid>
         </ScrollViewer>
         <Frame x:Name="frame_nova_pasta" HorizontalAlignment="Left" Height="280" Margin="10,431,0,0" VerticalAlignment="Top" Width="295"/>
