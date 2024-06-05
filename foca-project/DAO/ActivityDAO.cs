@@ -28,29 +28,33 @@ namespace foca_project.DAO
                         Description = reader["description"].ToString(),
                         Date_init = Convert.ToDateTime(reader["date_init"]),
                         Date_end = Convert.ToDateTime(reader["date_end"]),
-                        Category = reader["category"].ToString()
+                        isConcluded = Convert.ToBoolean(reader["is_concluded"]),
                     });
                 }
                 return activities;
             }
         }
 
-        public void CreateActivity(ActivityModel activity)
+        public void CreateActivity(ActivityModel activity, int idDirectory)
         {
+            idDirectory = 1;
+            activity.Directory = idDirectory;
             string[] properties = { 
                 "title", 
                 "description", 
                 "date_init", 
                 "date_end", 
-                "category_idcategory", 
+                "is_concluded",
+                "directory_iddirectory",
                 "users_idusers" 
             };
             string[] values = { 
                 activity.Title, 
                 activity.Description, 
                 activity.Date_init.ToString("yyyy-MM-dd"), 
-                activity.Date_end.ToString("yyyy-MM-dd"), 
-                "1", 
+                activity.Date_end.ToString("yyyy-MM-dd"),
+                "1",
+                activity.Directory.ToString(), 
                 activity.Id_user.ToString()
             };
            
@@ -73,6 +77,7 @@ namespace foca_project.DAO
                         Title = reader["title"].ToString(),
                         Description = reader["description"].ToString(),
                         Date_end = Convert.ToDateTime(reader["date_end"]),
+                        isConcluded = Convert.ToBoolean(reader["is_concluded"]),
                     };
                 }
                 return null;
@@ -81,9 +86,9 @@ namespace foca_project.DAO
 
         public void UpdateActivity(ActivityModel activity)
         {
-            string[] properties = { "title", "description", "date_end" };
-            string[] values = { activity.Title, activity.Description, activity.Date_end.ToString() };
-            string[] where = { "users_idusers = " + activity.Id_user.ToString() };
+            string[] properties = { "title", "description", "date_end", "is_concluded" };
+            string[] values = { activity.Title, activity.Description, activity.Date_end.ToString(), "1"};
+            string[] where = { "idtasks = " + activity.Id.ToString() };
             MySqlCommand cmd = _CRUDDAO.Update("tasks", properties, values, where);
         }
 

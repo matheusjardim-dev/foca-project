@@ -14,7 +14,8 @@ namespace foca_project.Models
         public DateTime Date_init { get; set; }
         public DateTime Date_end { get; set; }
         public int Id_user { get; set; }
-        public string Category { get; set; }
+        public bool isConcluded { get; set; }
+        public int Directory { get; set; }
         public bool IsReadOnly { get; set; }
     }
 }

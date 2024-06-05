@@ -19,7 +19,7 @@ namespace foca_project.ViewModels
 
         public void CreateActivity(ActivityModel activity)
         {
-            _ActivityDAO.CreateActivity(activity);
+            _ActivityDAO.CreateActivity(activity, 1);
         }
 
         public void UpdateActivity(ActivityModel activity)
