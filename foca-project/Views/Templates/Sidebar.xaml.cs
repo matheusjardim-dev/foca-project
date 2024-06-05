@@ -1,4 +1,6 @@
-﻿using System;
+﻿using foca_project.Models;
+using foca_project.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -21,7 +23,8 @@ namespace foca_project.Views.Templates
     public partial class Sidebar : Page
     {
         private readonly Action<Page> _navigateToPage;
-
+        ActivityVM _ActivityVM = new ActivityVM();
+        
         public Sidebar(Action<Page> navigateToPage)
         {
             InitializeComponent();

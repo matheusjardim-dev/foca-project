@@ -81,6 +81,17 @@ namespace foca_project.DAO
             return cmd; 
         }
 
+        public MySqlCommand GetActivityById(int idActivity)
+        {
+            string query = "SELECT * " +
+                "FROM tasks " +
+                "WHERE idtasks = " + idActivity;
+
+            MySqlCommand cmd = new MySqlCommand(query, _conn);
+
+            return cmd;
+        }
+
         public MySqlCommand GetDirectoriesByUser(int iduser)
         {
             string query = "SELECT * " +
@@ -92,11 +103,11 @@ namespace foca_project.DAO
             return cmd;
         }
 
-        public MySqlCommand GetActivitiesByUser(int iduser)
+        public MySqlCommand GetActivitiesByDirectory(int idDirectory)
         {
             string query = "SELECT * " +
                 "FROM tasks " +
-                "WHERE directory_iddirectory = " + iduser + " ORDER BY date_end ASC";
+                "WHERE directory_iddirectory = " + idDirectory + " ORDER BY date_end ASC";
 
             MySqlCommand cmd = new MySqlCommand(query, _conn);
 

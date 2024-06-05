@@ -65,9 +65,10 @@ namespace foca_project.Views
             var model = activity.ActivityModel;
             model.Description = descricao.Text;
             model.Date_end = (DateTime)activity.datePicker.SelectedDate;
+            model.Directory = 4;
             model.Id_user = 1;
             _ActivityVM.CreateActivity(model);
-            List<ActivityModel> tasks = _ActivityVM.GetActivitiesByUser(1);
+            List<ActivityModel> tasks = _ActivityVM.GetActivitiesByDirectory(model.Directory);
             foreach (ActivityModel task in tasks)
             {
                 taskpage.AdicionarTask(task);

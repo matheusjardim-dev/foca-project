@@ -31,8 +31,8 @@ namespace foca_project.Views
         private void ListActivities()
         {
             //TODO: Get user id from... (where?)
-            int iduser = 1;
-            List<ActivityModel> activities = _ActivityVM.GetActivitiesByUser(iduser);
+            int idDirectory = 1;
+            List<ActivityModel> activities = _ActivityVM.GetActivitiesByDirectory(idDirectory);
             ActivitiesList.ItemsSource = activities;
         }
     }
