@@ -76,7 +76,7 @@ namespace foca_project.Views.Templates
 
         private void botao_visualizar_Click(object sender, RoutedEventArgs e)
         {
-            EditActivityWindow eaw = new EditActivityWindow();
+            EditActivityWindow eaw = new EditActivityWindow(activityModel.Id);
             eaw.Show();
         }
     }
