@@ -1,4 +1,5 @@
 ﻿using foca_project.Models;
+using foca_project.ViewModels;
 using foca_project.Views.Templates;
 using System;
 using System.Collections.Generic;
@@ -21,9 +22,12 @@ namespace foca_project.Views
     /// </summary>
     public partial class EditActivityWindow : Window
     {
-        public EditActivityWindow()
+        ActivityVM _ActivityVM = new ActivityVM();
+        ActivityModel model = new ActivityModel();
+        public EditActivityWindow(int idActivity)
         {
             InitializeComponent();
+            model = _ActivityVM.GetActivityById(idActivity);
         }
 
 
@@ -34,6 +38,12 @@ namespace foca_project.Views
 
         private void concluir_Click(object sender, RoutedEventArgs e)
         {
+            if(model.isConcluded == false)
+            {
+                model.isConcluded = true;
+            } else {
+                model.isConcluded = false;
+            }
             estado_concluido.Visibility = Visibility.Visible;
             concluir.Visibility = Visibility.Hidden;
             voltar.Visibility = Visibility.Visible;
@@ -48,7 +58,8 @@ namespace foca_project.Views
 
         private void excluir_Click(object sender, RoutedEventArgs e)
         {
-
+            _ActivityVM.DeleteActivity(model.Id);
+            this.Close();
         }
 
         private void cancelar_Click(object sender, RoutedEventArgs e)
@@ -58,8 +69,7 @@ namespace foca_project.Views
 
         private void confirmar_Click(object sender, RoutedEventArgs e)
         {
-
-            //aqui o código para salvar as alterações no banco
+            _ActivityVM.UpdateActivity(model);
             this.Close();
         }
     }
