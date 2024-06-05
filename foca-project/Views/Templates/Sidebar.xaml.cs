@@ -42,7 +42,11 @@ namespace foca_project.Views.Templates
 
         private void Home_Selected(object sender, RoutedEventArgs e)
         {
-            _navigateToPage(new HomePage(AddFolderToSidebar));
+            var selectedItem = barra_lateral.SelectedItem as TreeViewItem;
+            if (selectedItem != null && selectedItem.Header.ToString() == "Home")
+            {
+                _navigateToPage(new HomePage(AddFolderToSidebar));
+            }
         }
 
         private void NovaPasta_Selected(object sender, RoutedEventArgs e)

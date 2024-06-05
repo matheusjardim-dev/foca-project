@@ -23,7 +23,7 @@
         </Button>
         
         <TreeView x:Name="barra_lateral" Grid.Row="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" FontSize="30" >
-            <TreeViewItem x:Name="home" Header="Home" >
+            <TreeViewItem x:Name="home" Header="Home" Selected="Home_Selected" >
                 
 
             </TreeViewItem>
