@@ -20,12 +20,15 @@ namespace foca_project.Views
     /// </summary>
     public partial class HomePage : Page
     {
-        public HomePage()
+        private readonly Action<string> _addFolderToSidebar;
+
+        public HomePage(Action<string> addFolderToSidebar)
         {
             InitializeComponent();
+            _addFolderToSidebar = addFolderToSidebar;
         }
 
-        private void AddNewFolderToGrid(string folderTitle)
+        public void AddNewFolderToGrid(string folderTitle)
         {
             StackPanel newFolder = new StackPanel
             {
@@ -64,6 +67,7 @@ namespace foca_project.Views
                         Grid.SetRow(newFolder, row);
                         Grid.SetColumn(newFolder, column);
                         lista_pastas_grid.Children.Add(newFolder);
+                        _addFolderToSidebar(folderTitle);
                         return;
                     }
                 }
@@ -73,6 +77,7 @@ namespace foca_project.Views
             Grid.SetRow(newFolder, numRows);
             Grid.SetColumn(newFolder, 0);
             lista_pastas_grid.Children.Add(newFolder);
+            _addFolderToSidebar(folderTitle);
         }
 
         private void NewFolderPage_NewFolderCreated(object sender, string folderTitle)

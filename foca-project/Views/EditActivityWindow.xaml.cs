@@ -48,5 +48,10 @@ namespace foca_project.Views
         {
 
         }
+
+        private void cancelar_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+        }
     }
 }
