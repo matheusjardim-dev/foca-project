@@ -60,5 +60,11 @@ namespace foca_project.Views.Templates
             };
             _navigateToPage(newFolderPage);
         }
+
+        private void configuracoes_Click(object sender, RoutedEventArgs e)
+        {
+            ConfigWindow cw = new ConfigWindow();
+            cw.Show();
+        }
     }
 }
