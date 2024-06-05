@@ -25,7 +25,7 @@ namespace foca_project.Views
         {
             InitializeComponent();
             barra_lateral.Navigate(new Sidebar());
-            principal.Navigate(new TaskPage("teste"));
+            principal.Navigate(new HomePage());
         }
     }
 }
