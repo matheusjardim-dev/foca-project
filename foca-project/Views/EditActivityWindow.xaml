@@ -49,10 +49,10 @@
             <Label x:Name="label_concluido" Content="Concluído" HorizontalAlignment="Center" VerticalAlignment="Center" VerticalContentAlignment="Center" FontSize="10" Foreground="White" Height="27"/>
         </Border>
 
-        <Button x:Name="concluir" Height="25" Width="25" BorderThickness="0" Margin="854,42,11,12" Click="concluir_Click">
+        <Button x:Name="concluir" Height="25" Width="25" BorderThickness="0" Margin="854,42,11,12" Click="concluir_Click" Background="#D9D9D9">
             <Image Source="pack://application:,,,/Resources/Icone certo.png"/>
         </Button>
-        <Button x:Name="voltar" Height="25" Width="25" BorderThickness="0" Margin="854,42,11,12" Click="voltar_Click" Visibility="Hidden">
+        <Button x:Name="voltar" Height="25" Width="25" BorderThickness="0" Margin="854,42,11,12" Click="voltar_Click" Visibility="Hidden" Background="#D9D9D9">
             <Image Source="pack://application:,,,/Resources/Icone X.png"/>
         </Button>
 
