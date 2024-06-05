@@ -27,8 +27,8 @@ namespace foca_project.Views
         public HomePage(Action<string> addFolderToSidebar)
         {
             InitializeComponent();
-            ListFolders();
             _addFolderToSidebar = addFolderToSidebar;
+            ListFolders();
 
         }
 
