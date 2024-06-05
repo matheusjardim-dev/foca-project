@@ -21,11 +21,24 @@ namespace foca_project.Views
     /// </summary>
     public partial class MainPage : Page
     {
+        private Templates.Sidebar _sidebar;
+
         public MainPage()
         {
+            _sidebar = new Templates.Sidebar(NavigateToPage);
             InitializeComponent();
-            barra_lateral.Navigate(new Sidebar());
-            principal.Navigate(new HomePage());
+            barra_lateral.Navigate(_sidebar);
+            principal.Navigate(new HomePage(AddFolderToSidebar));
+        }
+
+        private void NavigateToPage(Page page)
+        {
+            principal.Navigate(page);
+        }
+
+        private void AddFolderToSidebar(string folderTitle)
+        {
+            _sidebar.AddFolderToSidebar(folderTitle);
         }
     }
 }

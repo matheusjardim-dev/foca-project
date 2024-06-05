@@ -41,12 +41,26 @@ namespace foca_project.Views
 
         private void voltar_Click(object sender, RoutedEventArgs e)
         {
-
+            estado_concluido.Visibility = Visibility.Hidden;
+            concluir.Visibility = Visibility.Visible;
+            voltar.Visibility = Visibility.Hidden;
         }
 
         private void excluir_Click(object sender, RoutedEventArgs e)
         {
 
+        }
+
+        private void cancelar_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+        }
+
+        private void confirmar_Click(object sender, RoutedEventArgs e)
+        {
+
+            //aqui o código para salvar as alterações no banco
+            this.Close();
         }
     }
 }

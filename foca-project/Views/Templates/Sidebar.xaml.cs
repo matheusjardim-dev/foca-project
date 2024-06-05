@@ -20,9 +20,45 @@ namespace foca_project.Views.Templates
     /// </summary>
     public partial class Sidebar : Page
     {
-        public Sidebar()
+        private readonly Action<Page> _navigateToPage;
+
+        public Sidebar(Action<Page> navigateToPage)
         {
             InitializeComponent();
+            _navigateToPage = navigateToPage;
+        }
+
+        public void AddFolderToSidebar(string folderTitle)
+        {
+            TreeViewItem folderItem = new TreeViewItem { Header = folderTitle };
+            folderItem.Selected += (sender, args) =>
+            {
+                _navigateToPage(new TaskPage(folderTitle));
+            };
+
+            var homeItem = barra_lateral.Items[0] as TreeViewItem;
+            homeItem?.Items.Add(folderItem);
+        }
+
+        private void Home_Selected(object sender, RoutedEventArgs e)
+        {
+            var selectedItem = barra_lateral.SelectedItem as TreeViewItem;
+            if (selectedItem != null && selectedItem.Header.ToString() == "Home")
+            {
+                _navigateToPage(new HomePage(AddFolderToSidebar));
+            }
+        }
+
+        private void NovaPasta_Selected(object sender, RoutedEventArgs e)
+        {
+            NewFolderPage newFolderPage = new NewFolderPage();
+            newFolderPage.NewFolderCreated += (s, folderTitle) =>
+            {
+                var homePage = new HomePage(AddFolderToSidebar);
+                homePage.AddNewFolderToGrid(folderTitle);
+                _navigateToPage(homePage);
+            };
+            _navigateToPage(newFolderPage);
         }
     }
 }
