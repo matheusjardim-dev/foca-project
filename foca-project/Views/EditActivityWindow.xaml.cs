@@ -55,5 +55,12 @@ namespace foca_project.Views
         {
             this.Close();
         }
+
+        private void confirmar_Click(object sender, RoutedEventArgs e)
+        {
+
+            //aqui o código para salvar as alterações no banco
+            this.Close();
+        }
     }
 }
