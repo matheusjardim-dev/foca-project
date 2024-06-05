@@ -15,8 +15,7 @@ namespace foca_project.DAO
         public List<DirectoryModel> GetDirectoriesByUser(int iduser)
         {
             List<DirectoryModel> directories = new List<DirectoryModel>();
-            string[] where = { "users_idusers = " + iduser.ToString()};
-            MySqlCommand cmd = _CRUDDAO.SelectById("directory", where);
+            MySqlCommand cmd = _CRUDDAO.GetDirectoriesByUser(iduser);
 
             using (MySqlDataReader reader = cmd.ExecuteReader())
             {
