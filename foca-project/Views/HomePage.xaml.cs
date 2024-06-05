@@ -1,4 +1,5 @@
-﻿using System;
+﻿using foca_project.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,12 +21,20 @@ namespace foca_project.Views
     /// </summary>
     public partial class HomePage : Page
     {
+        DirectoryVM _DirectoryVM = new DirectoryVM();
         private readonly Action<string> _addFolderToSidebar;
 
         public HomePage(Action<string> addFolderToSidebar)
         {
             InitializeComponent();
+            ListFolders();
             _addFolderToSidebar = addFolderToSidebar;
+
+        }
+
+        private void ListFolders()
+        {
+            _DirectoryVM.GetDirectoriesByUser(1).ForEach(directory => AddNewFolderToGrid(directory.Title));
         }
 
         public void AddNewFolderToGrid(string folderTitle)

@@ -1,4 +1,6 @@
-﻿using System;
+﻿using foca_project.Models;
+using foca_project.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -21,12 +23,14 @@ namespace foca_project.Views
     /// </summary>
     public partial class NewFolderPage : Page
     {
+        DirectoryVM _DirectoryVM = new DirectoryVM();
         public event EventHandler<string> NewFolderCreated;
         public event EventHandler Cancel;
 
         public NewFolderPage()
         {
             InitializeComponent();
+
         }
 
         private void folder_titulo_GotFocus(object sender, RoutedEventArgs e)
@@ -51,6 +55,10 @@ namespace foca_project.Views
 
         private void confirmar_Click(object sender, RoutedEventArgs e)
         {
+            DirectoryModel model = new DirectoryModel();
+            model.Title = folder_titulo.Text;
+            model.Id_user = 1;
+            _DirectoryVM.CreateDirectory(model);
             string folderTitle = folder_titulo.Text;
             NewFolderCreated?.Invoke(this, folderTitle);
         }
