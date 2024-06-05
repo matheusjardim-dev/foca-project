@@ -32,6 +32,7 @@ namespace foca_project.Views
             var model = new ActivityModel { Title = "Insira um título" , Date_end = DateTime.Now};
             activity = new Activity(model);
             frame_activity.Navigate(activity);
+            activity.botao_visualizar.Visibility = Visibility.Hidden;
             
         }
 

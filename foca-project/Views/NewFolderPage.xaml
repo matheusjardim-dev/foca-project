@@ -11,7 +11,7 @@
       Title="NewFolderPage">
 
     <Grid>
-        <Border BorderThickness="1" CornerRadius="10" BorderBrush=""/>
+        <Border BorderThickness="1" CornerRadius="10" />
         <Image Source="pack://application:,,,/Resources/Icone pasta.png" Height="150" Width="150" Margin="72,21,73,109"/>
         <TextBox x:Name="folder_titulo" Text="Insira um título" Height="50" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="20" Margin="0,186,1,44" BorderThickness="0" GotFocus="folder_titulo_GotFocus" LostFocus="folder_titulo_LostFocus"/>
     </Grid>

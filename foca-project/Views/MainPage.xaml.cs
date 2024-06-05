@@ -25,7 +25,7 @@ namespace foca_project.Views
         {
             InitializeComponent();
             barra_lateral.Navigate(new Sidebar());
-            principal.Navigate(new HomePage());
+            principal.Navigate(new TaskPage("Estrutura de dados"));
         }
     }
 }
