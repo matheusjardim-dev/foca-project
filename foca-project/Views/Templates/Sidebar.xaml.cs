@@ -33,14 +33,27 @@ namespace foca_project.Views.Templates
 
         public void AddFolderToSidebar(string folderTitle)
         {
-            TreeViewItem folderItem = new TreeViewItem { Header = folderTitle };
-            folderItem.Selected += (sender, args) =>
-            {
-                _navigateToPage(new TaskPage(folderTitle));
-            };
-
             var homeItem = barra_lateral.Items[0] as TreeViewItem;
-            homeItem?.Items.Add(folderItem);
+
+            if (homeItem != null)
+            {
+                foreach (TreeViewItem item in homeItem.Items)
+                {
+                    if (item.Header.ToString() == folderTitle)
+                    {
+                        return;
+                    }
+                }
+
+                TreeViewItem folderItem = new TreeViewItem { Header = folderTitle };
+                folderItem.Selected += (sender, args) =>
+                {
+                    _navigateToPage(new TaskPage(folderTitle));
+                };
+
+
+                homeItem?.Items.Add(folderItem);
+            }
         }
 
         private void Home_Selected(object sender, RoutedEventArgs e)
