@@ -23,8 +23,13 @@ namespace foca_project.Views.Templates
     public partial class Sidebar : Page
     {
         private readonly Action<Page> _navigateToPage;
+<<<<<<< HEAD
         ActivityVM _ActivityVM = new ActivityVM();
         
+=======
+        
+
+>>>>>>> d82b40086902ea516528726c0027b6f0ab842107
         public Sidebar(Action<Page> navigateToPage)
         {
             InitializeComponent();
