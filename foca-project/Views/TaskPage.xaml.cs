@@ -39,8 +39,8 @@ namespace foca_project.Views
 
         public void AdicionarTask(ActivityModel model)
         {
-            int iduser = 1;
-            List<ActivityModel> activities = _ActivityVM.GetActivitiesByUser(iduser);
+            // int idDirectory = 4;
+            //List<ActivityModel> activities = _ActivityVM.GetActivitiesByDirectory(idDirectory);
 
             model.IsReadOnly = true;
 

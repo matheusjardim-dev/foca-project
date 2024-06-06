@@ -12,10 +12,10 @@ namespace foca_project.DAO
     public class ActivityDAO
     {
         private static CRUDDAO _CRUDDAO = new CRUDDAO();
-        public List<ActivityModel> GetActivitiesByUser(int iduser) 
+        public List<ActivityModel> GetActivitiesByDirectory(int idDirectory) 
         {
             List<ActivityModel> activities = new List<ActivityModel>();
-            MySqlCommand cmd = _CRUDDAO.GetActivitiesByUser(iduser);
+            MySqlCommand cmd = _CRUDDAO.GetActivitiesByDirectory(idDirectory);
 
             using (MySqlDataReader reader = cmd.ExecuteReader())
             {
@@ -37,7 +37,7 @@ namespace foca_project.DAO
 
         public void CreateActivity(ActivityModel activity, int idDirectory)
         {
-            idDirectory = 1;
+            idDirectory = 4;
             activity.Directory = idDirectory;
             string[] properties = { 
                 "title", 
@@ -64,8 +64,7 @@ namespace foca_project.DAO
 
         public ActivityModel GetActivityById(int idActivity)
         {
-            string[] where = { "idtasks = " + idActivity.ToString() };
-            MySqlCommand cmd = _CRUDDAO.SelectById("tasks", where);
+            MySqlCommand cmd = _CRUDDAO.GetActivityById(idActivity);
 
             using (MySqlDataReader reader = cmd.ExecuteReader())
             {

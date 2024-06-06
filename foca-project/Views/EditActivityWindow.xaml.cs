@@ -3,6 +3,7 @@ using foca_project.ViewModels;
 using foca_project.Views.Templates;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -28,22 +29,30 @@ namespace foca_project.Views
         {
             InitializeComponent();
             model = _ActivityVM.GetActivityById(idActivity);
+            titulo.Text = model.Title;
+            descricao.Text = model.Description;
+            data.SelectedDate = model.Date_end;
         }
 
 
         private void data_SelectedDateChanged(object sender, SelectionChangedEventArgs e)
         {
-
+            
         }
 
         private void concluir_Click(object sender, RoutedEventArgs e)
         {
-            if(model.isConcluded == false)
+            //atualizar
+            model.Title = titulo.Text;
+            model.Description = descricao.Text;
+            model.Date_end = (DateTime)data.SelectedDate;
+            if (model.isConcluded == false)
             {
                 model.isConcluded = true;
             } else {
                 model.isConcluded = false;
             }
+            _ActivityVM.UpdateActivity(model);
             estado_concluido.Visibility = Visibility.Visible;
             concluir.Visibility = Visibility.Hidden;
             voltar.Visibility = Visibility.Visible;

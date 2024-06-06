@@ -59,6 +59,7 @@ namespace foca_project.Views
             model.Title = folder_titulo.Text;
             model.Id_user = 1;
             _DirectoryVM.CreateDirectory(model);
+            int idDirectory = model.Id;
             string folderTitle = folder_titulo.Text;
             NewFolderCreated?.Invoke(this, folderTitle);
         }
