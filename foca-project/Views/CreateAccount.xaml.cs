@@ -31,7 +31,11 @@ namespace foca_project.Views
 
         private void ClickButton(object sender, RoutedEventArgs e)
         {
-            createUser();
+            if (createUser())
+            {
+                NavigationService.Navigate(new Uri("/Views/LoginPage.xaml", UriKind.Relative));
+            }
+
         }
 
         private void Faca_login_Click(object sender, RoutedEventArgs e)
